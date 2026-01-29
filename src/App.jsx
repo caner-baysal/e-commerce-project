@@ -28,6 +28,14 @@ function App() {
       <main>
         <section className="hero" style={{display: isOpen ? 'none' : 'block'}}>
           <div className='hero-content'>
+            <p className="season">SUMMER 2020</p>
+            <p className="collection">NEW COLLECTION</p>
+            <div className='nav-btn'>
+              <button className='left-btn'></button><button className='right-btn'></button>
+            </div>
+            <p className="desc">
+              We know how large objects will act, but things on a small scale.
+            </p>
             <button className='shop-now-btn'></button>
           </div>
         </section>
