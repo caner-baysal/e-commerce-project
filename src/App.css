@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,11 +10,27 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.top-bar {
+  display: none;
+}
+
+
 .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .logo {
@@ -50,19 +68,36 @@ body {
   font-size: 22px;
 }
 
+.desktop-nav {
+  display: none;
+}
+
+.login-register {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+}
+
+.like {
+  display: none;
+}
+
 .hero {
-  height: 90vh;
-  width:90vw;
-  background-image: url("./design/product-slide-1.jpg");
+  height: 100vh;
+  width: 100vw;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   color: white;
   text-align: center;
 }
 
 .hero-content {
-  display:flex;
+  display: flex;
   justify-content: center;
   padding-top: 70px;
   flex-direction: column;
@@ -124,4 +159,162 @@ body {
   background-position: center;
   border: none;
   cursor: pointer;
+}
+
+@media(min-width: 1024px) {
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252B42;
+    color: white;
+    padding: 10px 40px;
+    font-size: 14px;
+  }
+
+  .top-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .top-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .logo {
+    grid-column: 1;
+  }
+
+  .icons {
+    margin-left: 100%;
+    display: flex;
+    gap: 16px;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-item {
+  position: relative;
+  }
+
+  .desktop-nav {
+    display: flex;
+    margin-top: 20px;
+    gap: 24px;
+  }
+
+  .desktop-nav a,
+  .nav-link {
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .login-register {
+    display: flex;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+  }
+
+  .search {
+    display: flex;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+  }
+
+  .shopping {
+    display: flex;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+  }
+
+  .like {
+    display: flex;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+
+  .hero {
+    height: 100vh;
+    width: 100%;
+    background-image: url("./design/shop-hero-1-product-slide-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  .season {
+    padding-left: 15%;
+  }
+
+  .collection {
+    padding-left: 15%;
+  }
+  
+  .shop-now-btn {
+    margin-left: 15%;
+  }
 }
