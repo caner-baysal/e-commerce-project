@@ -6,30 +6,53 @@ function Header() {
   const [isShopOpen, setIsShopOpen] = useState(false);
 
   return (
-    <header className="header">
-      <div class="flex items-center justify-between px-6 py-4 lg:px-10">
+    <header class='flex flex-col w-[400px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
+    [@media(min-width:1024px)]:items-center [@media(min-width:1024px)]:flex-justify-between 
+    [@media(min-width:1024px)]:w-[1024px] [@media(min-width: 1024px)]:p-[16px 40px]'>
+      <div class='flex items-center justify-between px-6 py-4 lg:px-10 [@media(min-width:1024px)]:w-[1437px] 
+      [@media(min-width:1024px)]:h-[58px] [@media(min-width:1024px)]:mt-[10px] [@media(min-width:1024px)]:flex 
+      [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:items-center'>
         <div class="flex items-center gap-10">
-          <span class="text-xl font-bold">Bandage</span>
+          <span class='text-[20px] font-bold h-[28px] ml-[35px] [@media(min-width: 1024px)]:w-[187px]
+          [@media(min-width:1024px)]:ml-[38px]'>
+            Bandage
+          </span>
 
-          <nav  className="desktop-nav">
-            <a href="#">Home</a>
-            <div className="nav-item">
-                  <button className="nav-link" onClick={() => setIsShopOpen(prev => !prev)}>Shop ▾</button>
+          <nav  class='hidden [@media(min-width:1024px)]:flex
+          [@media(min-width:1024px)]:mt-[20px] [@media(min-width:1024px)]:gap-[24px]'>
+            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
+            <div class='[@media(min-width:1024px)]:relative'>
+                  <button onClick={() => setIsShopOpen(prev => !prev)}
+                  class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px] 
+                  [@media(min-width:1440px)]:no-underline [@media(min-width:1440px)]:text-[#777] 
+                  [@media(min-width:1440px)]:bg-none [@media(min-width:1440px)]:border-none 
+                  [@media(min-width:1440px)]:cursor-pointer [@media(min-width:1024px)]:w-[50px]'>
+                    Shop ▾
+                  </button>
                   {isShopOpen && (
-                  <div className='dropdown'>
-                    <a href="#">Product</a>
-                    <a href="#">Pricing</a>
+                  <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col
+                  [@media(min-width:1024px)]:dropdown [@media(min-width:1024px)]:absolute 
+                  [@media(min-width:1024px)]:top-full [@media(min-width:1024px)]:left-0 
+                  [@media(min-width:1024px)]:mt-1 [@media(min-width:1024px)]:bg-white 
+                  [@media(min-width:1024px)]:shadow-lg'>
+                    <a href="#" class='[@media(min-width:1024px)]:text-[14px]'>Product</a>
+                    <a href="#" class='[@media(min-width:1024px)]:text-[14px]'>Pricing</a>
                   </div>)}
-                </div>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-            <a href="#">Pages</a>
+            </div>
+            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
+            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Blog</a>
+            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Contact</a>
+            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Pages</a>
           </nav>
         </div>
 
-        <div className="icons">
-          <button href="#" className="login-register">
+        <div class='flex flex-row gap-[10px] mr-[24px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row
+        [@media(min-width:1024px)]:h-[54px] [@media(min-width:1024px)]:mt-[30px]
+        [@media(min-width:1024px)]:mr-[35px] [@media(min-width:1024px)]:justify-center'>
+          <button href="#" class='hidden [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:bg-transparent 
+          [@media(min-width:1024px)]:border-none [@media(min-width:1024px)]:text-[14px] 
+          [@media(min-width:1024px)]:cursor-pointer [@media(min-width:1024px)]:text-[blue] 
+          [@media(min-width:1024px)]:font-bold [@media(min-width:1024px)]:text-[10px]'>
             <User size={20} /> Login / Register
           </button>
           <a className="search"><Search size={20} /></a>
@@ -50,6 +73,7 @@ function Header() {
           <a href="#">Blog</a>
           <a href="#">Contact</a>
           <a href="#">Pages</a>
+          <a href="#" class='flex flex-row w-[200px]'><User /> Login / Register</a>
       </nav>
       
     </header>

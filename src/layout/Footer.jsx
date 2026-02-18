@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="py-6 text-center text-sm text-gray-400">
-      © 2025 Bandage. All rights reserved.
+    <footer class='text-center mx-auto mt-[0] w-[186px] text-[14px] font-bold leading-[24px] tracking-[0.2px] text-[#737373]'>
+      Made With Love By Finland All Right Reserved 
     </footer>
   );
 }
