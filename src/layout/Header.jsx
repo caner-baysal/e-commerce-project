@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Menu, Search, ShoppingCart, User, HeartPlus } from "lucide-react";
+import { Link } from 'react-router-dom'
+
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,14 +15,14 @@ function Header() {
       [@media(min-width:1024px)]:h-[58px] [@media(min-width:1024px)]:mt-[10px] [@media(min-width:1024px)]:flex 
       [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:items-center'>
         <div class="flex items-center gap-10">
-          <span class='text-[20px] font-bold h-[28px] ml-[35px] [@media(min-width: 1024px)]:w-[187px]
+          <Link to='/' class='text-[20px] font-bold h-[28px] ml-[35px] [@media(min-width: 1024px)]:w-[187px]
           [@media(min-width:1024px)]:ml-[38px]'>
             Bandage
-          </span>
+          </Link>
 
           <nav  class='hidden [@media(min-width:1024px)]:flex
           [@media(min-width:1024px)]:mt-[20px] [@media(min-width:1024px)]:gap-[24px]'>
-            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
+            <a href="/" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
             <div class='[@media(min-width:1024px)]:relative'>
                   <button onClick={() => setIsShopOpen(prev => !prev)}
                   class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px] 
@@ -35,8 +37,8 @@ function Header() {
                   [@media(min-width:1024px)]:top-full [@media(min-width:1024px)]:left-0 
                   [@media(min-width:1024px)]:mt-1 [@media(min-width:1024px)]:bg-white 
                   [@media(min-width:1024px)]:shadow-lg'>
-                    <a href="#" class='[@media(min-width:1024px)]:text-[14px]'>Product</a>
-                    <a href="#" class='[@media(min-width:1024px)]:text-[14px]'>Pricing</a>
+                    <Link to='/shop' class='nav-link [@media(min-width:1024px)]:text-[14px]'>Product</Link>
+                    <Link to='/pricing' class='[@media(min-width:1024px)]:text-[14px]'>Pricing</Link>
                   </div>)}
             </div>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
@@ -65,8 +67,8 @@ function Header() {
       </div>
 
       <nav className={`mobile-nav ${isOpen ? `open` : ``}`}>
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
+          <a href="/">Home</a>
+          <a href="/shop">Shop</a>
           <a href="#">Product</a>
           <a href="#">Pricing</a>
           <a href="#">About</a>

@@ -1,17 +1,23 @@
-import TopBar from "./layout/TopBar"
+import { Switch, Route } from 'react-router-dom';
+import TopBar from "./layout/TopBar";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import PageContent from "./layout/PageContent";
 import './App.css';
 import HomePage from "./pages/Hompeage";
+import ShopPage from "./pages/ShopPage";
+import Bottom from "./layout/Bottom";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col container mx-auto px-4">
       <TopBar />
       <Header />
-      <HomePage />
-      <PageContent />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/shop" component={ShopPage} />
+      </Switch>
+      <Bottom />
       <Footer />
     </div>
   );
