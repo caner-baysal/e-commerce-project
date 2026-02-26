@@ -19,7 +19,7 @@ function Clients() {
     return (
         <div class='flex flex-col w-[400px] h-[952px] my-[50px] gap-[60px] items-center
         [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[920px]
-        [@media(min-width:1024px)]:h-[100px] [@media(min-width:1024px)]:ml-[50px]'>
+        [@media(min-width:1024px)]:h-[100px] [6@media(min-width:1024px)]:ml-[50px]'>
             {clients.map((client) => (
                 <a key={client.name} href={client.url} target="_blank" rel="noopener noreferrer">
                     <img src={client.logo} alt={`${client.name} logo`}/>

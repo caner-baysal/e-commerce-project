@@ -69,7 +69,7 @@ function Header() {
       <nav className={`mobile-nav ${isOpen ? `open` : ``}`}>
           <a href="/">Home</a>
           <a href="/shop">Shop</a>
-          <a href="#">Product</a>
+          <a href="/product">Product</a>
           <a href="#">Pricing</a>
           <a href="#">About</a>
           <a href="#">Blog</a>

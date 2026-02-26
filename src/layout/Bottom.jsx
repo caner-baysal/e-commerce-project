@@ -20,7 +20,8 @@ function Bottom() {
             </div>
           </div>
         <div class='w-[414px] h-[1071px] bg-[#FFFFFF] [@media(min-width:1024px)]:w-[1024px]
-        [@media(min-width:1024px)]:h-[488px] [@media(min-width:1024px)]:mt-[0] w-full overflow-hidden'/*w-full overflow-hidden vercelde kontrol*/>
+        [@media(min-width:1024px)]:h-[488px] [@media(min-width:1024px)]:mt-[0] 
+        [@media(min-width:1024px)]:w-full [@media(min-width:1024px)]:overflow-hidden'/*w-full overflow-hidden vercelde kontrol*/>
           <div class='flex flex-col w-[321px] h-[1071px] ml-[46px] py-[70px]'>
             <div class='flex flex-col w-[321px] h-[931px] gap-[30px] [@media(min-width:1024px)]:flex
             [@media(min-width:1024px)]:flex-row'>
@@ -34,7 +35,7 @@ function Bottom() {
                 <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Carrier
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   We are hiring
                 </a>
                 <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
@@ -51,7 +52,7 @@ function Bottom() {
                 <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Carrier
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   We are hiring
                 </a>
                 <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
@@ -59,10 +60,10 @@ function Bottom() {
                 </a>
               </div>
               <div class='flex flex-col w-[148px] h-[170px] gap-[10px]'>
-                <h5 class='w-[115px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
+                <h5 class='w-[100px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                   Features
                 </h5>
-                <a class='w-[140px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[130px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Business Marketing
                 </a>
                 <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
@@ -76,13 +77,13 @@ function Bottom() {
                 </a> 
               </div>
               <div class='flex flex-col w-[148px] h-[170px] gap-[10px]'>
-                <h5 class='w-[115px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
+                <h5 class='w-[100px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                   Resources
                 </h5>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   IOS & Android
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Watch a Demo
                 </a>
                 <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
@@ -97,9 +98,9 @@ function Bottom() {
                   Get In Touch
                 </h5>
                 <div class='flex flex-row w-[321px]'>
-                  <input class='w-[204px] h-[58px] rounded-[5px] border-[1px] border-[#E6E6E6]
+                  <input class='w-[184px] h-[58px] rounded-[5px] border-[1px] border-[#E6E6E6]
                   palceholder-gray-400 bg-[#F9F9F9]' placeholder='Your Email'></input>
-                  <button class='w-[117px] h-[58px] rounded-[5px] border-[1px] border-[#E6E6E6] bg-[#23A6F0] 
+                  <button class='w-[100px] h-[58px] rounded-[5px] border-[1px] border-[#E6E6E6] bg-[#23A6F0] 
                   text-center text-[#FFFFFF]'>
                     Subscribe
                   </button>
