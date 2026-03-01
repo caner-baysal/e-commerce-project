@@ -43,7 +43,7 @@ function Header() {
             </div>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Blog</a>
-            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Contact</a>
+            <a href="/contact" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Contact</a>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Pages</a>
           </nav>
         </div>
@@ -73,7 +73,7 @@ function Header() {
           <a href="#">Pricing</a>
           <a href="#">About</a>
           <a href="#">Blog</a>
-          <a href="#">Contact</a>
+          <a href="/contact">Contact</a>
           <a href="#">Pages</a>
           <a href="#" class='flex flex-row w-[200px]'><User /> Login / Register</a>
       </nav>

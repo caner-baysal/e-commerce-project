@@ -13,6 +13,8 @@ import product1 from "../design/product1.png";
 import product2 from "../design/product2.png";
 import product3 from "../design/product3.png";
 import product4 from "../design/product4.png";
+import product5 from "../design/product5.png";
+import product6 from "../design/product6.png";
 import Clients from '../layout/Clients';
 
 const photos = [chair, chair1, chair2];
@@ -36,7 +38,7 @@ function ProductPage() {
             <section>
                 <div class='flex flex-col w-[400px] h-[154px] py-[24px] bg-[#FAFAFA] gap-[30px] justify-center
                 [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[1024px]
-                [@media(min-width:1024px)]:h-[92px] [@media(min-width:1024px)]:gap-[70%]
+                [@media(min-width:1024px)]:h-[92px] [@media(min-width:1024px)]:gap-[50%]
                 [@media(min-width:1024px)]:items-center'>
                     <div class='flex w-[400px] h-[80px] py-[24px] justify-center'>
                         <h3 class='w-[63px] h-[32px] font-[700] text-[24px] text-[#252B42] leading-[32px] 
@@ -45,10 +47,16 @@ function ProductPage() {
                         </h3>
                     </div>
                     <div class='flex flex-row w-[400px] h-[44px] gap-[5px] justify-center'>
-                        <div class='flex flex-row w-[117px] h-[44px] py-[10px] gap-[15px]'>
+                        <div class='flex flex-row w-[117px] h-[44px] py-[10px] gap-[15px] justify-center'>
                             <Link to='/' class='w-[42px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]'>
                                 Home
                             </Link>
+                            <h4 class='w-[7px] h-[12px] text-[#BDBDBD]'>
+                                {'>'}
+                            </h4>
+                            <h6 class='w-[42px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                Shop
+                            </h6>
                             <h4 class='w-[7px] h-[12px] text-[#BDBDBD]'>
                                 {'>'}
                             </h4>
@@ -59,16 +67,21 @@ function ProductPage() {
                     </div>
                 </div>
             </section>
-            <section class='w-[400px] h-[850px] bg-[#FAFAFA]'>
-                <div class='flex flex-col items-center w-[348px] h-[895px] gap-[30px] mx-auto'>
-                    <div class='flex flex-col w-[348px] h-[394px] items-center'>
-                        <div class='flex flex-col w-[348px] h-[277px]'>
-                            <div class='flex flex-row w-[348px] h-[277px] mx-[24px] justify-center relative'>
+            <section class='w-[400px] h-[850px] bg-[#FAFAFA] [@media(min-width:1024px)]:w-[1024px]
+            [@media(min-width:1024px)]:h-[520px]'>
+                <div class='flex flex-col items-center w-[348px] h-[895px] gap-[30px] mx-auto
+                [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[920px]
+                [@media(min-width:1024px)]:h-[598px] [@media(min-width:1024px)]:justify-center'>
+                    <div class='flex flex-col w-[348px] h-[394px] items-center [@media(min-width:1024px)]:h-[598px]
+                    [@media(min-width:1024px)]:w-[400px]'>
+                        <div class='flex flex-col w-[348px] h-[277px] '>
+                            <div class='flex flex-row w-[348px] h-[277px] mx-[24px] justify-center relative
+                            [@media(min-width:1024px)]:h-[465px]'>
                                 <button style={{backgroundImage: `url(${prev})`}} class='w-[24px] h-[44.47px] 
                                 bg-no-repeat absolute left-0 top-1/2 -translate-y-1/2' onClick={goToPrev}>
                                 </button>
                                 <img src={photos[currentIndex]} alt={`Product ${currentIndex + 1}`}
-                                class='w-[348px] h-[277px] bg-center bg-cover bg-no-repeat'/>
+                                class='w-[348px] h-[277px] bg-center bg-cover bg-no-repeat [@media(min-width:1024px)]:h-[390px]'/>
                                 <button style={{backgroundImage: `url(${next})`}} class='w-[24px] h-[44.47px] 
                                 bg-no-repeat absolute right-0 top-1/2 -translate-y-1/2' onClick={goToNext}>
                                 </button>
@@ -83,7 +96,7 @@ function ProductPage() {
                             </div>
                         </div>
                     </div>
-                    <div class='w-[348px] h-[471px]'>
+                    <div class='w-[348px] h-[471px] [@media(min-width:1024px)]:w-[400px] [@media(min-width:1024px)]:h-[598px]'>
                         <h4 class='w-[162px] h-[30px] ml-[24px] font-[550] text-[20px] leading-[30px] 
                         tracking-[0.2px] text-[#252B42]'>
                             Floating Phone
@@ -145,8 +158,10 @@ function ProductPage() {
                     </div>
                 </div>
             </section>
-            <section class='flex flex-col w-[400] h-[1306px] bg-[#FFFFFF] items-center justify-center'>
-                <div class='flex flex-row w-[372px] h-[72px] mt-[10px] ml-[20px] justify-center'>
+            <section class='flex flex-col w-[400] h-[1306px] bg-[#FFFFFF] items-center justify-center
+            [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:h-[460px]'>
+                <div class='flex flex-row w-[372px] h-[72px] mt-[10px] ml-[20px] justify-center
+                [@media(min-width:1024px)]:w-[520px] [@media(min-width:1024px)]:justify-between'>
                     <a href="#" class='w-[86px] h-[24px] font-[600] text-[14px] leading-[24px] tracking-[0.2px]
                     text-center text-[#737373]'>Description</a>
                     <a href="#" class='w-[172px] h-[24px] font-[600] text-[14px] leading-[24px] tracking-[0.2px]
@@ -154,160 +169,283 @@ function ProductPage() {
                     <a href="#" class='w-[62px] h-[24px] font-[600] text-[14px] leading-[24px] tracking-[0.2px]
                     text-center text-[#737373]'>Reviews(0)</a>
                 </div>
-                <div class='flex flex-row w-[332px] h-[300px] ml-[24px] gap-[30px]'>
-                    <div class='w-[325px] h-[282px] rounded-[5.62px] bg-[#C4C4C4] ml-[24px]'>
-                        <img src={product} alt="product" class='w-[310px] h-[271px] ml-[-5px]'/>
+                <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
+                [@media(min-width:1024px)]:w-[920px]'>
+                    <div class='flex flex-row w-[332px] h-[300px] ml-[24px] gap-[30px] [@media(min-width:1024px)]:w-[300px]
+                    [@media(min-width:1024px)]:h-[392px] [@media(min-width:1024px)]:ml-[0]'>
+                        <div class='w-[325px] h-[282px] rounded-[5.62px] bg-[#C4C4C4] ml-[24px] [@media(min-width:1024px)]:w-[300px]'>
+                            <img src={product} alt="product" class='w-[310px] h-[271px] ml-[-5px] [@media(min-width:1024px)]:w-[300px]'/>
+                        </div>
                     </div>
-                </div>
-                <div class='flex flex-col w-[332px] h-[452px] ml-[24px] gap-[30px] py-[25px]'>
-                    <h3 class='w-[304px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]'>
-                        the quick fox jumps over 
-                    </h3>
-                    <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
-                        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
-                        RELIT official consequent door ENIM RELIT Mollie. 
-                        Excitation venial consequent sent nostrum met.
-                    </p>
-                    <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
-                        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
-                        RELIT official consequent door ENIM RELIT Mollie. 
-                        Excitation venial consequent sent nostrum met.
-                    </p>
-                    <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
-                        Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
-                        RELIT official consequent door ENIM RELIT Mollie. 
-                        Excitation venial consequent sent nostrum met.
-                    </p>
-                </div>
-                <div class='flex flex-col w-[332px] h-[367px] ml-[24px] gap-[30px] py-[25px]'>
-                    <div class='flex flex-col h-[188px] gap-[20px]'>
+                    <div class='flex flex-col w-[332px] h-[452px] ml-[24px] gap-[30px] py-[25px] 
+                    [@media(min-width:1024px)]:w-[300px] [@media(min-width:1024px)]:h-[392px]
+                    [@media(min-width:1024px)]:gap-[10px] [@media(min-width:1024px)]:py-[0]
+                    [@media(min-width:1024px)]:ml-[6px]'>
                         <h3 class='w-[304px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]'>
                             the quick fox jumps over 
                         </h3>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
+                        <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
+                            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
+                            RELIT official consequent door ENIM RELIT Mollie. 
+                            Excitation venial consequent sent nostrum met.
+                        </p>
+                        <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
+                            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
+                            RELIT official consequent door ENIM RELIT Mollie. 
+                            Excitation venial consequent sent nostrum met.
+                        </p>
+                        <p class='w-[332px] h-[100px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
+                            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. 
+                            RELIT official consequent door ENIM RELIT Mollie. 
+                            Excitation venial consequent sent nostrum met.
+                        </p>
                     </div>
-                    <div class='flex flex-col h-[188px] gap-[20px]'>
-                        <h3 class='w-[304px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]'>
-                            the quick fox jumps over 
-                        </h3>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
-                        <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
-                            {'>     the quick fox jumps over the lazy dog'}
-                        </h6>
+                    <div class='flex flex-col w-[332px] h-[367px] ml-[24px] gap-[30px] py-[25px]
+                    [@media(min-width:1024px)]:w-[300px] [@media(min-width:1024px)]:h-[392px]
+                    [@media(min-width:1024px)]:py-[0] [@media(min-width:1024px)]:gap-[20px]'>
+                        <div class='flex flex-col h-[188px] gap-[20px] [@media(min-width:1024px)]:gap-[10px]'>
+                            <h3 class='w-[304px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]'>
+                                the quick fox jumps over 
+                            </h3>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                        </div>
+                        <div class='flex flex-col h-[188px] gap-[20px] [@media(min-width:1024px)]:gap-[10px]'>
+                            <h3 class='w-[304px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]'>
+                                the quick fox jumps over 
+                            </h3>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                            <h6 class='w-[274px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]'>
+                                {'>     the quick fox jumps over the lazy dog'}
+                            </h6>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class='flex flex-col w-[331px] h-[2622px] mt-[10px] ml-[50px] py-[48px] gap-[24px]'>
+            <section class='flex flex-col w-[331px] h-[2622px] mt-[10px] ml-[50px] py-[48px] gap-[24px]
+            [@media(min-width:1024px)]:h-[540px]'>
                 <h3 class='w-[324px] h-[32px] font-[700] text-[24px] leading-[32px] tracking-[0.1px] text-[#252B42]
-                text-center'>
+                text-center [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:flex
+                [@media(min-width:1024px)]:flex-start'>
                     BESTSELLER PRODUCTS
                 </h3>
-                <p class='w-[331px] h-[0] mt-[20px] border-[1px] border-[#BDBDBD]'></p>
-                <div class='flex flex-col w-[328px] h-[589px]'>
-                    <img src={product1} alt="product1" />
-                    <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
-                        <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
-                        text-[#252B42]'>
-                            Graphic Design
-                        </h5>
-                        <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
-                        text-[#737373]'>
-                            English Department
-                        </Link>
-                        <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#BDBDBD]'>
-                                $16.48
+                <p class='w-[331px] h-[0] mt-[20px] border-[1px] border-[#BDBDBD] [@media(min-width:1024px)]:w-[920px]'></p>
+                <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row
+                [@media(min-width:1024px)]:w-[920px] [@media(min-width:1024px)]:gap-[26px]
+                [@media(min-width:1024px)]:h-[410px]'>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product1} alt="product1" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#23856D]'>
-                                $6.48
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product2} alt="product2" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product3} alt="product3" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
+                            </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product4} alt="product4" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
+                            </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class='flex flex-col w-[328px] h-[589px]'>
-                    <img src={product2} alt="product1" />
-                    <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
-                        <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
-                        text-[#252B42]'>
-                            Graphic Design
-                        </h5>
-                        <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
-                        text-[#737373]'>
-                            English Department
-                        </Link>
-                        <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#BDBDBD]'>
-                                $16.48
+            </section>
+            <section class='hidden flex flex-col w-[331px] h-[2622px] mt-[10px] ml-[50px] py-[48px] gap-[24px]
+            [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:h-[540px]'>
+                
+                <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row
+                [@media(min-width:1024px)]:w-[920px] [@media(min-width:1024px)]:gap-[26px]
+                [@media(min-width:1024px)]:h-[410px]'>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product1} alt="product1" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#23856D]'>
-                                $6.48
-                            </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class='flex flex-col w-[328px] h-[589px]'>
-                    <img src={product3} alt="product1" />
-                    <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
-                        <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
-                        text-[#252B42]'>
-                            Graphic Design
-                        </h5>
-                        <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
-                        text-[#737373]'>
-                            English Department
-                        </Link>
-                        <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#BDBDBD]'>
-                                $16.48
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product2} alt="product2" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#23856D]'>
-                                $6.48
-                            </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class='flex flex-col w-[328px] h-[589px]'>
-                    <img src={product4} alt="product1" />
-                    <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
-                        <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
-                        text-[#252B42]'>
-                            Graphic Design
-                        </h5>
-                        <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
-                        text-[#737373]'>
-                            English Department
-                        </Link>
-                        <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#BDBDBD]'>
-                                $16.48
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product1} alt="product1" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
-                            <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
-                            text-center text-[#23856D]'>
-                                $6.48
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='flex flex-col w-[328px] h-[589px] [@media(min-width:1024px)]:w-[210px]
+                    [@media(min-width:1024px)]:h-[410px]'>
+                        <img src={product2} alt="product2" />
+                        <div class='flex flex-col w-[348px] h-[162px] pt-[25px] px-[25px] pb-[35px] gap-[10px]'>
+                            <h5 class='w-[131px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px]
+                            text-[#252B42]'>
+                                Graphic Design
                             </h5>
+                            <Link class='w-[146px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px]
+                            text-[#737373]'>
+                                English Department
+                            </Link>
+                            <div class='flex flex-row w-[108px] h-[34px] py-[5px] px-[3px] gap-[5px]'>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#BDBDBD]'>
+                                    $16.48
+                                </h5>
+                                <h5 class='w-[52px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] 
+                                text-center text-[#23856D]'>
+                                    $6.48
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>

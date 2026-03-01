@@ -149,14 +149,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover5})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover5})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -174,14 +174,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover4})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover4})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -199,14 +199,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover3})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover3})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -224,14 +224,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover2})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover2})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -253,14 +253,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover6})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover6})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -278,14 +278,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover7})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover7})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -303,14 +303,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover8})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover8})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -328,14 +328,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover9})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover9})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -358,14 +358,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover1})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover1})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -383,14 +383,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover0})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product#" style={{backgroundImage: `url(${productcover0})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -408,14 +408,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -437,14 +437,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover10})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover10})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -462,14 +462,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover11})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover11})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -487,14 +487,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover12})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover12})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>
@@ -512,14 +512,14 @@ function ShopPage() {
                     <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
                     [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
                     [@media(min-width:1024px)]:items-center'>
-                        <div href="#" style={{backgroundImage: `url(${productcover13})`}} class='h-[427px] w-[348px] bg-center 
+                        <div href="/shop/product" style={{backgroundImage: `url(${productcover13})`}} class='h-[427px] w-[348px] bg-center 
                         ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
                         </div>
                         <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
                           <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                             Graphic Design
                           </h5>
-                          <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
+                          <a href='/shop/product' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
                             English Department
                           </a>
                           <div class='flex flex-row items-center gap-[5px]'>

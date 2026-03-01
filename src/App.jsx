@@ -8,6 +8,7 @@ import HomePage from "./pages/Hompeage";
 import ShopPage from "./pages/ShopPage";
 import Bottom from "./layout/Bottom";
 import ProductPage from './pages/ProductPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/shop" component={ShopPage} />
-        <Route path="/product" component={ProductPage} />
+        <Route exact path="/shop" component={ShopPage} />
+        <Route exact path="/shop/product" component={ProductPage} />
+        <Route exact path="/contact" component={ContactPage} />
       </Switch>
       <Bottom />
       <Footer />
