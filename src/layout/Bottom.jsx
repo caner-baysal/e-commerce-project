@@ -2,9 +2,9 @@ import {Facebook, Instagram, Twitter} from 'lucide-react';
 
 function Bottom() {
     return (
-        <section class='flex flex-col w-[414px] h-[1342px] bg-[#FFFFFF] [@media(min-width:1024px)]:h-[488px]
+        <section class='flex flex-col w-[400px] h-[1342px] bg-[#FFFFFF] [@media(min-width:1024px)]:h-[488px]
         [@media(min-width:1024px)]:w-[1024px]'>
-          <div class='w-[414px] h-[173px] bg-[#FAFAFA] [@media(min-width:1024px)]:w-[1024px]
+          <div class='w-[400px] h-[173px] bg-[#FAFAFA] [@media(min-width:1024px)]:w-[1024px]
           [@media(min-width:1024px)]:h-[108px]'>
             <div class='flex flex-col w-[325px] h-[173.5px] ml-[44px] py-[40px] [@media(min-width:1024px)]:w-[1024px]
             [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:gap-[70%]'>
@@ -19,7 +19,7 @@ function Bottom() {
               </div>
             </div>
           </div>
-        <div class='w-[414px] h-[1071px] bg-[#FFFFFF] [@media(min-width:1024px)]:w-[1024px]
+        <div class='w-[400px] h-[1071px] bg-[#FFFFFF] [@media(min-width:1024px)]:w-[1024px]
         [@media(min-width:1024px)]:h-[488px] [@media(min-width:1024px)]:mt-[0] 
         [@media(min-width:1024px)]:w-full [@media(min-width:1024px)]:overflow-hidden'/*w-full overflow-hidden vercelde kontrol*/>
           <div class='flex flex-col w-[321px] h-[1071px] ml-[46px] py-[70px]'>
@@ -29,16 +29,16 @@ function Bottom() {
                 <h5 class='w-[115px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                   Company Info
                 </h5>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   About Us
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Carrier
                 </a>
-                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   We are hiring
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Blog
                 </a>
               </div>
@@ -46,16 +46,16 @@ function Bottom() {
                 <h5 class='w-[115px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                  Legal
                 </h5>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   About Us
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Carrier
                 </a>
-                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   We are hiring
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Blog
                 </a>
               </div>
@@ -63,16 +63,16 @@ function Bottom() {
                 <h5 class='w-[100px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                   Features
                 </h5>
-                <a class='w-[130px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[130px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Business Marketing
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[120px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   User Analytics
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[120px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Live Chat
                 </a>
-                <a class='w-[120px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[120px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Unlimited Support
                 </a> 
               </div>
@@ -80,16 +80,16 @@ function Bottom() {
                 <h5 class='w-[100px] h-[24px] font-[700] text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
                   Resources
                 </h5>
-                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   IOS & Android
                 </a>
-                <a class='w-[100px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[100px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Watch a Demo
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   Customers
                 </a>
-                <a class='w-[67px] h-[24px] w-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
+                <a class='w-[67px] h-[24px] w-[70px] text-[14px] leading-[24px] tracking-[0.2px] text-[#737373]' href='#'>
                   API
                 </a>
               </div>

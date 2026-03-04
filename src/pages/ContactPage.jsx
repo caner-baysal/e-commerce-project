@@ -224,8 +224,8 @@ function ContactPage() {
                         </button>
                     </div>
                 </div>
-            <img src={bg2} alt="bg2" class='[@media(min-width:1024px)]:h-[386px] [@media(min-width:1024px)]:w-[404px]
-            '/>
+            <img src={bg2} alt="bg2" class='hidden [@media(min-width:1024px)]:block [@media(min-width:1024px)]:h-[386px] 
+            [@media(min-width:1024px)]:w-[404px]'/>
             </section>
         </main>
     );

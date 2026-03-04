@@ -9,6 +9,7 @@ import ShopPage from "./pages/ShopPage";
 import Bottom from "./layout/Bottom";
 import ProductPage from './pages/ProductPage';
 import ContactPage from './pages/ContactPage';
+import TeamPage from './pages/TeamPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/shop" component={ShopPage} />
         <Route exact path="/shop/product" component={ProductPage} />
         <Route exact path="/contact" component={ContactPage} />
+        <Route exact path="/team" component={TeamPage} />
       </Switch>
       <Bottom />
       <Footer />

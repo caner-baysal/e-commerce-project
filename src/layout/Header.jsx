@@ -41,7 +41,7 @@ function Header() {
                     <Link to='/pricing' class='[@media(min-width:1024px)]:text-[14px]'>Pricing</Link>
                   </div>)}
             </div>
-            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
+            <a href="/team" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Blog</a>
             <a href="/contact" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Contact</a>
             <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Pages</a>
@@ -70,9 +70,9 @@ function Header() {
           <a href="/">Home</a>
           <a href="/shop">Shop</a>
           <a href="/product">Product</a>
-          <a href="#">Pricing</a>
-          <a href="#">About</a>
-          <a href="#">Blog</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/team">About</a>
+          <a href="/blog">Blog</a>
           <a href="/contact">Contact</a>
           <a href="#">Pages</a>
           <a href="#" class='flex flex-row w-[200px]'><User /> Login / Register</a>
