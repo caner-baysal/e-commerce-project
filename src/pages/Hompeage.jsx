@@ -24,19 +24,19 @@ import asianclothes1 from "../design/asianclothes1.png";
 import unsplash from "../design/unsplash.png";
 import unsplash1 from "../design/unsplash1.png";
 import unsplash2 from "../design/unsplash2.png";
-import { AlarmClock, ChartArea, ChevronRight, CircleFadingPlus, Facebook, Instagram, Twitter} from 'lucide-react';
+import { AlarmClock, ChartArea, ChevronRight, CircleFadingPlus, Facebook, Instagram, Twitter } from 'lucide-react';
 
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [slide1, slide2];
-  const footSlides=[footcover, footcover1];
+  const footSlides = [footcover, footcover1];
   const [footSlide, setFootSlide] = useState(0);
 
   return (
     <main>
       <section
-        style={{display: isOpen ? 'none' : 'block', backgroundImage: `url(${slides[currentSlide]})`}}
+        style={{ display: isOpen ? 'none' : 'block', backgroundImage: `url(${slides[currentSlide]})` }}
         class='w-[400px] h-[753px] rounded-[5px] border-[1px] border-[#DEDEDE] bg-[#FFFFFF] items-[inline] 
         bg-cover bg-center bg-no-repeat [@media(min-width:1024px)]:w-[1024px]'>
 
@@ -66,7 +66,7 @@ function HomePage() {
           bg-center border-none cursor-pointer [@media(min-width:1024px)]:items-start 
           [@media(min-width:1024px)]:ml-[96px] [@media(min-width:1024px)]:ml-[150px]'>
           </button>
-        </div>  
+        </div>
       </section>
       <section class='w-[400px] h-[1750px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
       [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:h-[770px]'>
@@ -84,14 +84,14 @@ function HomePage() {
         </div>
         <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
         [@media(min-width:1024px)]:w-[860px] [@media(min-width:1024px)]:ml-[10px]'>
-          <div style={{backgroundImage: `url(${filter})`}} class='h-[500px] w-[324px] bg-center ml-[45px] mt-[30px] 
+          <div style={{ backgroundImage: `url(${filter})` }} class='h-[500px] w-[324px] bg-center ml-[45px] mt-[30px] 
           [@media(min-width:1024px)]:h-[500px] [@media(min-width:1024px)]:w-[420px] 
           [@media(min-width:1024px)]:bg-[cover] [@media(min-width:1024px)]:ml-[10px]'>
             <button class='bg-[#FFFFFF] h-[48px] w-[170px] mt-[426px] ml-[31px]'>
               <h2 class='font-bold'>MEN</h2>
             </button>
           </div>
-          <div style={{backgroundImage: `url(${filter1})`}} class='h-[500px] w-[324px] bg-center ml-[45px] mt-[30px] 
+          <div style={{ backgroundImage: `url(${filter1})` }} class='h-[500px] w-[324px] bg-center ml-[45px] mt-[30px] 
           [@media(min-width:1024px)]:h-[500px] [@media(min-width:1024px)]:w-[200px]'>
             <button class='bg-[#FFFFFF] h-[48px] w-[170px] mt-[426px] ml-[31px]'>
               <h2 class='font-bold'>WOMEN</h2>
@@ -100,13 +100,13 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:h-[500px] [@media(min-width:1024px)]:w-[200px]
           [@media(min-width:1024px)]:ml-[10px] [@media(min-width:1024px)]:mr-[30px]'>
-            <div style={{backgroundImage: `url(${filter2})`}} class='h-[242px] w-[324px] bg-center ml-[45px] mt-[30px]'>
+            <div style={{ backgroundImage: `url(${filter2})` }} class='h-[242px] w-[324px] bg-center ml-[45px] mt-[30px]'>
               <button class='bg-[#FFFFFF] h-[48px] w-[170px] mt-[171px] ml-[14px]'>
                 <h2 class='font-bold'>ACCESSORIES</h2>
               </button>
             </div>
-        
-            <div style={{backgroundImage: `url(${filter3})`}} class='h-[242px] w-[324px] bg-center ml-[45px] mt-[65px]'>
+
+            <div style={{ backgroundImage: `url(${filter3})` }} class='h-[242px] w-[324px] bg-center ml-[45px] mt-[65px]'>
               <button class='bg-[#FFFFFF] h-[48px] w-[170px] mt-[171px] ml-[14px]'>
                 <h2 class='font-bold'>KIDS</h2>
               </button>
@@ -116,7 +116,7 @@ function HomePage() {
       </section>
       <section class='w-[400px] h-[4822px] gap-[48px] [@media(min-width:1024px)]:h-[1652px] 
       [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:gap-[20px]'>
-        <div class= 'flex justify-center mt-[48px] flex-col items-center gap-[10px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col [@media(min-width:1024px)]:mt-[0]'>
+        <div class='flex justify-center mt-[48px] flex-col items-center gap-[10px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col [@media(min-width:1024px)]:mt-[0]'>
           <h4 class='text-center w-[191px] h-[30px] font-[400px] text-[#737373] font-[Arial, Sans-serif'>
             Featured Products
           </h4>
@@ -134,7 +134,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover5})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover5})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -159,7 +159,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover4})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover4})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -184,7 +184,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover3})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover3})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -209,7 +209,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover2})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover2})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -238,7 +238,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover6})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover6})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -263,7 +263,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover7})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover7})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -288,7 +288,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover8})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover8})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -313,7 +313,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover9})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover9})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -336,13 +336,13 @@ function HomePage() {
             </div>
           </div>
         </div>
-        
+
         <div class='[@media(min-width:1024px)]:hidden [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
         [@media(min-width:1024px)]:gap-[10px]'>
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover1})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover1})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -367,7 +367,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover0})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover0})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -392,7 +392,7 @@ function HomePage() {
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
           [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
           [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{backgroundImage: `url(${productcover})`}} class='h-[427px] w-[348px] bg-center 
+            <div href="#" style={{ backgroundImage: `url(${productcover})` }} class='h-[427px] w-[348px] bg-center 
             ml-[45px] mt-[16px] bg-cover'>
             </div>
             <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
@@ -439,13 +439,13 @@ function HomePage() {
                 $16.48
               </h3>
               <div class='flex gap-[24px] '>
-                <button style={{backgroundImage: `url(${prev})`}} class='w-[24px] h-[44.47px] bg-no-repeat bg-center' 
+                <button style={{ backgroundImage: `url(${prev})` }} class='w-[24px] h-[44.47px] bg-no-repeat bg-center'
                   onClick={() => setFootSlide(footSlide === 0 ? 1 : 0)}></button>
                 <button href="#" class='w-[181px] h-[52px] rounded-[5px] py-[15px] px-[40px] gap-[10px] bg-[#2DC071] 
                 text-[14px] text-[#FFFFFF] font-[700] '>
                   ADD TO CARD
                 </button>
-                <button style={{backgroundImage: `url(${next})`}} class='w-[24px] h-[44.47px] bg-no-repeat bg-center'
+                <button style={{ backgroundImage: `url(${next})` }} class='w-[24px] h-[44.47px] bg-no-repeat bg-center'
                   onClick={() => setFootSlide(footSlide === 0 ? 1 : 0)}></button>
               </div>
             </div>
@@ -454,8 +454,8 @@ function HomePage() {
         <div
           class='w-[400px] h-[681px] mt-[80px] bg-cover bg-center bg-no-repeat [@media(min-width:1024px)]:mt-[28px]
           [@media(min-width:1024px)]:w-[443px] [@media(min-width:1024px)]:h-[680px] [@media(min-width:1024px)]:bg-cover'
-          style={{display: isOpen ? 'none' : 'block', backgroundImage: `url(${footSlides[footSlide]})`}}
-         ></div>
+          style={{ display: isOpen ? 'none' : 'block', backgroundImage: `url(${footSlides[footSlide]})` }}
+        ></div>
       </section>
       <section class='flex flex-col h-[999px] w-[400px] mt-[120px] bg-[#FFFFFF] [@media(min-width:1024px)]:flex 
       [@media(min-width:1024px)]:flex-row-reverse [@media(min-width:1024px)]:h-[482px] 
@@ -494,12 +494,11 @@ function HomePage() {
             </button>
           </div>
         </div>
-        <div style={{backgroundImage: `url(${asianclothes1})`}} class='flex flex-col w-[414px] h-[407px] mt-[30px] 
+        <div style={{ backgroundImage: `url(${asianclothes1})` }} class='flex flex-col w-[414px] h-[407px] mt-[30px] 
         bg-no-repeat [@media(min-width:1024px)]:w-[504px]'></div>
       </section>
       <section class='mx-auto flex flex-col w-[400px] h-[2302px] py-[20px] gap-[80px] bg-[#FFFFFF]
-      [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:h-[944px] 
-      [@media(min-width:1024px)]:mx-[10px]'>
+      [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:h-[944px]'>
         <div class='mx-auto flex flex-col w-[300px] h-[184px] gap-[10px] @media(min-width:1024px)]:w-[1024px]'>
           <h6 class='mx-auto w-[114px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#23A6F0] 
           text-center'>
@@ -514,11 +513,11 @@ function HomePage() {
             Problems trying to resolve the conflict between the two major
           </p>
         </div>
-        <div class='flex flex-col w-[330px] h-[1878px] gap-[10px] mx-auto [@media(min-width:1024px)]:flex
+        <div class='flex flex-col w-[330px] h-[1878px] gap-[5px] mx-auto [@media(min-width:1024px)]:flex
         [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[1024px]
-        [@media(min-width:1024px)]:'>
+        [@media(min-width:1024px)]:space-between'>
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col '>
-            <div style={{backgroundImage: `url(${unsplash})`}} class='flex w-[330px] h-[300px]'>
+            <div style={{ backgroundImage: `url(${unsplash})` }} class='flex w-[320px] h-[300px]'>
               <div class='flex flex-row w-[58px] h-[24px] mt-[20px] ml-[20px] rounded-[3px] px-[10px] bg-[#E74040]'>
                 <h6 class='mx-auto font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#FFFFFF]'>NEW</h6>
               </div>
@@ -555,7 +554,7 @@ function HomePage() {
             </div>
           </div>
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col'>
-            <div style={{backgroundImage: `url(${unsplash1})`}} class='flex w-[330px] h-[300px]'>
+            <div style={{ backgroundImage: `url(${unsplash1})` }} class='flex w-[320px] h-[300px]'>
               <div class='flex flex-row w-[58px] h-[24px] mt-[20px] ml-[20px] rounded-[3px] px-[10px] bg-[#E74040]'>
                 <h6 class='mx-auto font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#FFFFFF]'>NEW</h6>
               </div>
@@ -576,7 +575,7 @@ function HomePage() {
                 Loudest à la Madison #1 (L'integral)
               </h4>
               <p class='w-[280px] h-[60px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
-               We focus on ergonomics and meeting you where you work. It's only a keystroke away.
+                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
               </p>
               <div class='flex flex-row w-[280px] h-[46px] justify-between py-[15px]'>
                 <date class='flex flex-row w-[110px] h-[16px] gap-[5px] text-[12px] text-[#737373] font-[500]'>
@@ -592,40 +591,40 @@ function HomePage() {
             </div>
           </div>
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col'>
-            <div style={{backgroundImage: `url(${unsplash2})`}} class='flex w-[330px] h-[300px]'>
+            <div style={{ backgroundImage: `url(${unsplash2})` }} class='flex w-[320px] h-[300px]'>
               <div class='flex flex-row w-[58px] h-[24px] mt-[20px] ml-[20px] rounded-[3px] px-[10px] bg-[#E74040]'>
                 <h6 class='mx-auto font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#FFFFFF]'>NEW</h6>
               </div>
             </div>
             <div class='flex flex-col w-[330px] h-[306px] px-[25px] pt-[25px] pb-[35px] gap-[10px]'>
-                <div class='flex flex-row w-[159px] h-[16px] gap-[15px]'>
-                  <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px] text-[#8EC2F2]'>
-                    Google
-                  </a>
-                  <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px]'>
-                    Trending
-                  </a>
-                  <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px]'>
-                    New
-                  </a>
-                </div>
-                <h4 class='w-[247px] h-[60px] font-[400] text-[20px] leading-[30px] tracking-[0.2px] text-[#252B42]'>
-                  Loudest à la Madison #1 (L'integral)
-                </h4>
-                <p class='w-[280px] h-[60px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
-                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
-                </p>
-                <div class='flex flex-row w-[280px] h-[46px] justify-between py-[15px]'>
-                  <date class='flex flex-row w-[110px] h-[16px] gap-[5px] text-[12px] text-[#737373] font-[500]'>
-                    <AlarmClock class='h-[14px] text-[#8EC2F2]' />22 April 2021
-                  </date>
-                  <h6 class='flex flex-row w-[110px] h-[16px] gap-[5px] text-[12px] text-[#737373] font-[500]'>
-                    <ChartArea class='text-[#23856D] h-[14px]' />10 Comments
-                  </h6>
-                </div>
-                <a href='#' class='flex flex-row w-[124px] h-[24px] gap-[10px] text-[14px] text-[#737373] font-bold'>
-                  Learn More<ChevronRight class='text-[#8EC2F2] h-[20px]' />
+              <div class='flex flex-row w-[159px] h-[16px] gap-[15px]'>
+                <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px] text-[#8EC2F2]'>
+                  Google
                 </a>
+                <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px]'>
+                  Trending
+                </a>
+                <a href='#' class='w-[45px] h-[16px] font-[400] text-[12px] leading-[16px] tracking-[0.2px]'>
+                  New
+                </a>
+              </div>
+              <h4 class='w-[247px] h-[60px] font-[400] text-[20px] leading-[30px] tracking-[0.2px] text-[#252B42]'>
+                Loudest à la Madison #1 (L'integral)
+              </h4>
+              <p class='w-[280px] h-[60px] font-[400] text-[14px] leading-[20px] tracking-[0.2px] text-[#737373]'>
+                We focus on ergonomics and meeting you where you work. It's only a keystroke away.
+              </p>
+              <div class='flex flex-row w-[280px] h-[46px] justify-between py-[15px]'>
+                <date class='flex flex-row w-[110px] h-[16px] gap-[5px] text-[12px] text-[#737373] font-[500]'>
+                  <AlarmClock class='h-[14px] text-[#8EC2F2]' />22 April 2021
+                </date>
+                <h6 class='flex flex-row w-[110px] h-[16px] gap-[5px] text-[12px] text-[#737373] font-[500]'>
+                  <ChartArea class='text-[#23856D] h-[14px]' />10 Comments
+                </h6>
+              </div>
+              <a href='#' class='flex flex-row w-[124px] h-[24px] gap-[10px] text-[14px] text-[#737373] font-bold'>
+                Learn More<ChevronRight class='text-[#8EC2F2] h-[20px]' />
+              </a>
             </div>
           </div>
         </div>

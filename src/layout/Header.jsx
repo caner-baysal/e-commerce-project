@@ -20,31 +20,35 @@ function Header() {
             Bandage
           </Link>
 
-          <nav  class='hidden [@media(min-width:1024px)]:flex
+          <nav class='hidden [@media(min-width:1024px)]:flex
           [@media(min-width:1024px)]:mt-[20px] [@media(min-width:1024px)]:gap-[24px]'>
-            <a href="/" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
+            <a href="/" class='nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
             <div class='[@media(min-width:1024px)]:relative'>
-                  <button onClick={() => setIsShopOpen(prev => !prev)}
-                  class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px] 
+              <button onClick={() => setIsShopOpen(prev => !prev)}
+                class='nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px] 
                   [@media(min-width:1440px)]:no-underline [@media(min-width:1440px)]:text-[#777] 
                   [@media(min-width:1440px)]:bg-none [@media(min-width:1440px)]:border-none 
                   [@media(min-width:1440px)]:cursor-pointer [@media(min-width:1024px)]:w-[50px]'>
-                    Shop ▾
-                  </button>
-                  {isShopOpen && (
-                  <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col
+                Shop ▾
+              </button>
+              {isShopOpen && (
+                <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col
                   [@media(min-width:1024px)]:dropdown [@media(min-width:1024px)]:absolute 
                   [@media(min-width:1024px)]:top-full [@media(min-width:1024px)]:left-0 
                   [@media(min-width:1024px)]:mt-1 [@media(min-width:1024px)]:bg-white 
                   [@media(min-width:1024px)]:shadow-lg'>
-                    <Link to='/shop' class='nav-link [@media(min-width:1024px)]:text-[14px]'>Product</Link>
-                    <Link to='/pricing' class='[@media(min-width:1024px)]:text-[14px]'>Pricing</Link>
-                  </div>)}
+                  <Link to='/shop' class='nav-link [@media(min-width:1024px)]:text-[14px]'>Product</Link>
+                  <Link to='/pricing' class='nav-link [@media(min-width:1024px)]:text-[14px]'>Pricing</Link>
+                </div>)}
             </div>
-            <a href="/team" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>About</a>
-            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Blog</a>
-            <a href="/contact" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Contact</a>
-            <a href="#" class='[@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Pages</a>
+            <a href="/team" class='nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
+              About</a>
+            <a href="#" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
+              Blog</a>
+            <a href="/contact" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
+              Contact</a>
+            <a href="#" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
+              Pages</a>
           </nav>
         </div>
 
@@ -59,7 +63,7 @@ function Header() {
           </button>
           <a className="search"><Search size={20} /></a>
           <a className="shopping"><ShoppingCart size={20} /></a>
-          <a className="like"><HeartPlus size={20}/></a>
+          <a className="like"><HeartPlus size={20} /></a>
           <button className="hamburger-btn" onClick={() => setIsOpen(!isOpen)}>
             <Menu />
           </button>
@@ -67,17 +71,17 @@ function Header() {
       </div>
 
       <nav className={`mobile-nav ${isOpen ? `open` : ``}`}>
-          <a href="/">Home</a>
-          <a href="/shop">Shop</a>
-          <a href="/product">Product</a>
-          <a href="/pricing">Pricing</a>
-          <a href="/team">About</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
-          <a href="#">Pages</a>
-          <a href="#" class='flex flex-row w-[200px]'><User /> Login / Register</a>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/product">Product</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/team">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="#">Pages</a>
+        <a href="#" class='flex flex-row w-[200px]'><User /> Login / Register</a>
       </nav>
-      
+
     </header>
   );
 }
