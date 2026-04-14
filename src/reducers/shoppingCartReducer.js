@@ -1,17 +1,17 @@
-export const SET_CARD = "SET_CARD";
+export const SET_CART = "SET_CART";
 export const SET_PAYMENT = "SET_PAYMENT";
 export const SET_ADDRESS = "SET_ADDRESS";
 
 const initialState = {
-    card: [],
+    cart: [],
     payment: {},
     address: {}
 }
 
-function shoppingCardReducer(state = initialState, action) {
+function shoppingCartReducer(state = initialState, action) {
     switch (action.type) {
-        case SET_CARD:
-            return {...state, card: action.payload};
+        case SET_CART:
+            return {...state, cart: action.payload};
         case SET_PAYMENT:
             return {...state, payment: action.payload};
         case SET_ADDRESS:
@@ -21,4 +21,4 @@ function shoppingCardReducer(state = initialState, action) {
     }
 }
 
-export default shoppingCardReducer;
+export default shoppingCartReducer;

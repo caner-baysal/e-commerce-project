@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { LayoutGrid, List } from 'lucide-react';
 
-function FilterBar({ totalResults = 12 }) {
-    const [isSortOpen, setIsSortOpen] = useState(false);
-    const [selectedSort, setSelectedSort] = useState("Popularity");
-    const sortOptions = ['Popularity', 'Price: Low to High', 'Price: High to Low', 'Newest'];
+function FilterBar({ totalResults = 0 , sort, onSortChange, filterText, onFilterTextChange, onFilter}) {
+    //const [isSortOpen, setIsSortOpen] = useState(false);
+    //const [selectedSort, setSelectedSort] = useState("Popularity");
+    const sortOptions = [
+        {label: "Popularity", value: ""},
+        {label: "Price: Low to High", value: "price:asc"},
+        {label: "Price: High to Low", value: "price:desc"},
+        {label: "Rating: Low to High", value: "rating:asc"},
+        {label: "Rating: High to Low", value: "rating:desc"},
+    ];
 
     return (
         <main class='flex w-[400px] h-[216px] bg-[#FFFFFF] justify-center [@media(min-width:1024px)]:w-[1024px] 
@@ -31,34 +37,38 @@ function FilterBar({ totalResults = 12 }) {
                     </div>
                 </div>
                 
-                <div class='flex flex-row w-[252px] h-[50px] px-[1px] gap-[15px]'>
-                    <button onClick={() => setIsSortOpen(!isSortOpen)}
-                    class='flex flex-row w-[141px] h-[50px] rounded-[5px] border-[1px] border-[#DDDDDD] bg-[#F9F9F9]'>
-                        <span class='flex flex-row w-[74px] h-[28px] mt-[11px] ml-[18px] font-[400] text-[14px] 
-                        text-[#DDDDDD]'>
-                            {selectedSort}
-                        </span>
-                        <svg class={`w-4 h-4 transition-transform text-[#DDDDDD] mt-[16px] ${isSortOpen ? 'rotate-180' : ''}`}
-                        fill="none" stroke="currentColor" viewBox="5 5 20 20">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    {isSortOpen && (
-                        <div>
-                            {sortOptions.map((option) =>(
-                                <button key={option} onclick={() => {setSelectedSort(option); setIsSortOpen(false)}}
-                                class='text-[12px]'/*TO DO: correct the dropdown menu*/>
-                                    {option} 
-                                </button>
-                            ))
-                            }
-                        </div>
-                    )}
-                    <button class='flex flex-row w-[94px] h-[50px] rounded-[5px] mx-[20px] gap-[10px] 
-                    bg-[#23A6F0] items-center justify-center'>
-                        <span class='w-[40px] h-[24px] font-[700] text-[14px] text-center text-[#FFFFFF]'>
-                            Filter
-                        </span>
+                <div className='flex flex-row gap-[8px] items-center flex-wrap justify-center'>
+
+                    <input
+                        type="text"
+                        value={filterText}
+                        onChange={(e) => onFilterTextChange(e.target.value)}
+                        placeholder="Search products..."
+                        className='h-[50px] px-[12px] rounded-[5px] border-[1px] border-[#DDDDDD]
+                        bg-[#F9F9F9] text-[14px] text-[#737373] outline-none
+                        [@media(min-width:1024px)]:w-[180px]'
+                    />
+
+                    <select
+                        value={sort}
+                        onChange={(e) => onSortChange(e.target.value)}
+                        className='h-[50px] px-[12px] rounded-[5px] border-[1px] border-[#DDDDDD]
+                        bg-[#F9F9F9] text-[14px] text-[#737373] outline-none cursor-pointer
+                        [@media(min-width:1024px)]:w-[180px]'
+                    >
+                        {sortOptions.map((option) => (
+                            <option key={option.label} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+
+                    <button
+                        onClick={onFilter}
+                        className='h-[50px] px-[24px] rounded-[5px] bg-[#23A6F0] text-[#FFFFFF]
+                        font-[700] text-[14px] cursor-pointer hover:bg-[#1a8fd1] transition-colors'
+                    >
+                        Filter
                     </button>
                 </div>
                 
