@@ -148,7 +148,7 @@ function ShopPage() {
       <section>
         <div class='flex flex-col w-[400px] h-[154px] py-[24px] bg-[#FAFAFA] gap-[30px] justify-center
                 [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[1024px]
-                [@media(min-width:1024px)]:h-[92px] [@media(min-width:1024px)]:gap-[70%]
+                [@media(min-width:1024px)]:h-[92px] [@media(min-width:1024px)]:gap-[30%]
                 [@media(min-width:1024px)]:items-center'>
           <div class='flex w-[400px] h-[80px] py-[24px] justify-center'>
             <h3 class='w-[63px] h-[32px] font-[700] text-[24px] text-[#252B42] leading-[32px] 

@@ -23,40 +23,30 @@ export const fetchRoles = () => async (dispatch, getState) => {
     }
 };
 
-export const loginUser = (credentials, rememberMe, history) => async (dispatch) => {
-    try {
-        const response = await axiosInstance.post("/login", credentials);
-        const user = response.data;
-        
-        dispatch(setUser(user));
-
-        if (rememberMe && user.token) {
-            localStorage.setItem("token", user.token);
-        }
-
-        if (history.length > 2) {
-            history.goBack();
-        } else {
-            history.push("/");
-        }
+export const loginUser = (credentials, rememberMe, onSuccess) => async (dispatch) => {
+    const response = await axiosInstance.post("/login", credentials);
+    const user = response.data;
+    axiosInstance.defaults.headers.common["Authorization"] = user.token;
+    dispatch(setUser(user));
+    if (rememberMe && user.token) {
+        localStorage.setItem("token", user.token);
     }
-    catch (error) {
-        console.log("Full error object:", error);
-        console.log("Login error status:", error.response?.status);
-        console.log("Login error body:", error.response?.data);
-        throw error;
-    }
-}
+    if (onSuccess) onSuccess();
+};
+
 export const autoLogin = () => async (dispatch) => {
     const token = localStorage.getItem("token");
     if (!token) return;
+    axiosInstance.defaults.headers.common["Authorization"] = token;
     try {
-        const response = axiosInstance.get("/verify");
+        const response = await axiosInstance.get("/verify");
         const user = response.data;
         dispatch(setUser(user));
-        
-        localStorage.setItem("token", user.token);
-        axiosInstance.defaults.headers.common["Autorization"] = user.token;
+
+        if (user.token) {
+            localStorage.setItem("token", user.token);
+            axiosInstance.defaults.headers.common["Autorization"] = user.token;
+        }
     }
     catch (error) {
         localStorage.removeItem("token");

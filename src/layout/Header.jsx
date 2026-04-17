@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, Search, ShoppingCart, User, HeartPlus } from "lucide-react";
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from '../actions/clientActions';
 import { getCategoryPath, genderMap } from '../utils/categoryHelpers';
@@ -11,6 +11,10 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  const [isShopMobileOpen, setIsShopMobileOpen] = useState(false);
 
   const user = useSelector((state) => state.client.user);
   const categories = useSelector((state) => state.product.categories) || [];
@@ -38,13 +42,13 @@ function Header() {
       [@media(min-width:1024px)]:h-[58px] [@media(min-width:1024px)]:mt-[10px] [@media(min-width:1024px)]:flex 
       [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:items-center'>
         <div class="flex items-center gap-10">
-          <Link to='/' class='text-[20px] font-bold h-[28px] ml-[35px] [@media(min-width: 1024px)]:w-[187px]
+          <Link to='/' class='text-[20px] text-[#252B42] no-underline font-bold h-[28px] ml-[35px] [@media(min-width: 1024px)]:w-[187px]
           [@media(min-width:1024px)]:ml-[38px]'>
-            Bandage
+            BrandName
           </Link>
 
-          <nav class='hidden [@media(min-width:1024px)]:flex
-          [@media(min-width:1024px)]:mt-[20px] [@media(min-width:1024px)]:gap-[24px]'>
+          <nav class='hidden font-[700] text-[#737373] [@media(min-width:1024px)]:flex
+          [@media(min-width:1024px)]:mt-[44px] [@media(min-width:1024px)]:gap-[24px]'>
             <a href="/" class='nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>Home</a>
             <div class='[@media(min-width:1024px)]:relative'>
               <button onClick={() => setIsShopOpen(prev => !prev)}
@@ -90,8 +94,6 @@ function Header() {
             </div>
             <a href="/team" class='nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
               About</a>
-            <a href="#" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
-              Blog</a>
             <a href="/contact" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
               Contact</a>
             <a href="#" class=' nav-link [@media(min-width:1024px)]:text-[14px] [@media(min-width:1024px)]:mb-[15px]'>
@@ -100,36 +102,55 @@ function Header() {
         </div>
 
         <div class='flex flex-row gap-[10px] mr-[24px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row
-        [@media(min-width:1024px)]:h-[54px] [@media(min-width:1024px)]:mt-[30px]
+        [@media(min-width:1024px)]:h-[54px]
         [@media(min-width:1024px)]:mr-[35px] [@media(min-width:1024px)]:justify-center'>
 
           {isLoggedIn ? (
-            <div className="hidden [@media(min-width:1024px)]:flex items-center gap-2">
-              <User email={user.email}
-                size={32}
-                className="rounded-full"
-                default="mp"
-              />
-              <span className="text-[14px] font-bold">{user.name}</span>
-              <button className="text-[12px] text-blue-600 bg-transparent border-none cursor-pointer ml-2"
-                onClick={handleLogout}>
-                Logout
+            <div className="hidden [@media(min-width:1024px)]:flex items-center gap-2 relative">
+              <button
+                onClick={() => setIsUserMenuOpen(prev => !prev)}
+                className='flex items-center gap-2 bg-transparent border-none cursor-pointer'
+              >
+                <User size={32} className="rounded-full" />
+                <span className="text-[14px] font-bold">{user.name}</span>
+                <span className='text-[12px] text-[#737373]'>▾</span>
               </button>
+
+              {isUserMenuOpen && (
+                <div className='absolute top-full right-0 mt-[8px] bg-white shadow-lg
+                rounded-[8px] border-[1px] border-[#ECECEC] z-50 min-w-[180px] py-[8px]'>
+                  <Link
+                    to='/orders'
+                    onClick={() => setIsUserMenuOpen(false)}
+                    className='block px-[16px] py-[10px] text-[14px] text-[#252B42]
+                    hover:bg-[#F0F8FF] hover:text-[#23A6F0] transition-colors'
+                  >
+                    Geçmiş Siparişlerim
+                  </Link>
+                  <div className='border-t-[1px] border-[#ECECEC] my-[4px]'></div>
+                  <button
+                    onClick={() => { handleLogout(); setIsUserMenuOpen(false); }}
+                    className='w-full text-left px-[16px] py-[10px] text-[14px] text-red-500
+                    hover:bg-red-50 transition-colors cursor-pointer bg-transparent border-none'
+                  >
+                    Çıkış Yap
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
-            <Link to="/login" class='hidden [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:bg-transparent 
-              [@media(min-width:1024px)]:border-none [@media(min-width:1024px)]:text-[14px] 
-              [@media(min-width:1024px)]:cursor-pointer [@media(min-width:1024px)]:text-[blue] 
-              [@media(min-width:1024px)]:font-bold [@media(min-width:1024px)]:text-[10px]'>
+            <Link to="/login" className='hidden [@media(min-width:1024px)]:flex items-center gap-1
+            text-blue-600 font-bold text-[14px]'>
               <User size={20} /> Login / Register
             </Link>
           )}
 
-          <a className="search"><Search size={20} /></a>
-          <div className='relative'>
+          <a className="search [@media(min-width:1024px)]:mt-[16px]"><Search size={20} /></a>
+          <div className="relative">
             <button
               onClick={() => setIsCartOpen(prev => !prev)}
-              className='relative flex items-center bg-transparent border-none cursor-pointer'
+              className='relative flex items-center bg-transparent border-none cursor-pointer
+              [@media(min-width:1024px)]:mt-[16px]'
             >
               <ShoppingCart class='text-[blue]' size={20} />
 
@@ -210,7 +231,7 @@ function Header() {
               </div>
             )}
           </div>
-          <a className="like"><HeartPlus size={20} /></a>
+          <a className="like [@media(min-width:1024px)]:mt-[16px]"><HeartPlus size={20} /></a>
           <button className="hamburger-btn" onClick={() => setIsOpen(!isOpen)}>
             <Menu />
           </button>
@@ -219,18 +240,28 @@ function Header() {
 
       <nav className={`mobile-nav ${isOpen ? `open` : ``}`}>
         <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
+        <button
+          onClick={() => setIsShopMobileOpen(prev => !prev)}
+          className='text-[22px] text-[#777] font-[500] bg-transparent border-none cursor-pointer flex items-center gap-2'
+        >
+          Shop {isShopMobileOpen ? '▴' : '▾'}
+        </button>
 
-        {categories.map((cat) => (
-          <Link
-            key={cat.id}
-            to={getCategoryPath(cat)}
-            className='pl-4 text-[14px] text-[#737373]'
-            onClick={() => setIsOpen(false)}
-          >
-            {genderMap[cat.gender] === "kadin" ? "Kadın" : "Erkek"} - {cat.title}
-          </Link>
-        ))}
+        {isShopMobileOpen && (
+          <div className='flex flex-col items-center gap-[12px] w-full'>
+            {categories.map((cat) => (
+              <Link
+                key={cat.id}
+                to={getCategoryPath(cat)}
+                className='text-[16px] text-[#737373]'
+                onClick={() => { setIsOpen(false); setIsShopMobileOpen(false); }}
+              >
+                {genderMap[cat.gender] === "kadin" ? "Kadın" : "Erkek"} — {cat.title}
+              </Link>
+            ))}
+          </div>
+        )}
+
         <Link to="/team">About</Link>
         <Link to="/contact">Contact</Link>
         {isLoggedIn ? (
@@ -241,7 +272,7 @@ function Header() {
             Logout ({user.name})
           </button>
         ) : (
-          <Link to="/login" className="flex flex-row w-[200px]">
+          <Link to="/login" className="flex flex-row w-[200px] ml-[50px]">
             Login / Register
           </Link>
         )}

@@ -1,4 +1,4 @@
-import { setProductFetchState } from "../actions/productActions";
+
 
 export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
@@ -42,7 +42,7 @@ function productReducer(state = initialState, action) {
         case SET_SELECTED_PRODUCT:
             return { ...state, selectedProduct: action.payload };
         case SET_PRODUCT_FETCH_STATE:
-            return { ...state, setProductFetchState: action.payload };
+            return { ...state, ProductFetchState: action.payload };
         default:
             return state;
     }

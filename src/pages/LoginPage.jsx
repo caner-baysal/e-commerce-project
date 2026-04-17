@@ -32,10 +32,10 @@ function LoginPage() {
             await dispatch(loginUser(
                 { email: formData.email, password: formData.password },
                 formData.rememberMe,
-                history.push("/shop")
+                () => history.push("/shop")
             ));
         } catch (error) {
-            toast.error(error.response?.data?.meesage || "Login failed",
+            toast.error(error.response?.data?.message || "Login failed",
                 { position: "top-right", autoClose: 3000 }
             );
         }

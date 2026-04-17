@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { axiosInstance } from "../actions/clientActions";
 import { useForm } from "react-hook-form";
-import { Plus, Edit2, Trash2, CreditCard } from 'lucide-react';
+import { Plus, Edit2, Trash2, CreditCard, CheckCircle } from 'lucide-react';
+import { setCart } from "../actions/shoppingCartActions";
 
 const CITIES = [
     "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya",
@@ -19,7 +20,7 @@ const CITIES = [
     "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
 ];
 
-const MONTHS = [1,2,3,4,5,6,7,8,9,10,11,12];
+const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const YEARS = Array.from({ length: 15 }, (_, i) => new Date().getFullYear() + i);
 
 const SHIPPING_COST = 29.99;
@@ -27,8 +28,10 @@ const FREE_SHIPPING_THRESHOLD = 150;
 
 function OrderPage() {
     const history = useHistory();
+    const dispatch = useDispatch();
     const user = useSelector((state) => state.client.user);
     const cart = useSelector((state) => state.shoppingCart.cart);
+    /*const order = useSelector((state) => state.user.order);*/
 
     const [activeStep, setActiveStep] = useState(1);
 
@@ -45,15 +48,26 @@ function OrderPage() {
     const [showCardForm, setShowCardForm] = useState(false);
     const [editingCard, setEditingCard] = useState(null);
     const [cardSubmitting, setCardSubmitting] = useState(false);
+    const [orderSuccess, setOrderSuccess] = useState(false);
+    const [orderPlacing, setOrderPlacing] = useState(false);
+    const [ccv, setCcv] = useState("");
+    const [authChecked, setAuthChecked] = useState(false);
 
     useEffect(() => {
-        if (!user || !user.email) history.push('/login');
+        const timer = setTimeout(() => {
+            if (!user || !user.email) {
+                history.push("/login")
+            }
+            setAuthChecked(true);
+        }, 300);
+        return () => clearTimeout(timer);
     }, [user, history]);
 
     useEffect(() => {
         if (!user?.email) return;
         fetchAddresses();
     }, [user]);
+
 
     useEffect(() => {
         if (activeStep === 2 && user?.email) fetchCards();
@@ -85,6 +99,7 @@ function OrderPage() {
         }
     };
 
+
     const checkedItems = cart.filter((item) => item.checked);
     const cartTotal = checkedItems.reduce((sum, item) => sum + item.product.price * item.count, 0);
     const shippingDiscount = cartTotal >= FREE_SHIPPING_THRESHOLD ? SHIPPING_COST : 0;
@@ -106,13 +121,13 @@ function OrderPage() {
 
     const openAddAddressForm = () => {
         setEditingAddress(null);
-        resetAddress({ title: '', name: '', surname: '', phone: '', city: '', district: '', neighborhood: '', address: '' });
+        resetAddress({ title: "", name: "", surname: "", phone: "", city: "", district: "", neighborhood: "", address: "" });
         setShowAddressForm(true);
     };
 
-    const openEditAddressForm = (addr) => {
-        setEditingAddress(addr);
-        resetAddress({ title: addr.title, name: addr.name, surname: addr.surname, phone: addr.phone, city: addr.city, district: addr.district, neighborhood: addr.neighborhood, address: addr.address });
+    const openEditAddressForm = () => {
+        setEditingAddress(null);
+        resetAddress({ title: "", name: "", surname: "", phone: "", city: "", district: "", neighborhood: "", address: "" });
         setShowAddressForm(true);
     };
 
@@ -190,13 +205,87 @@ function OrderPage() {
         }
     };
 
+    const handlePlaceOrder = async () => {
+        const selectedCard = cards.find((c) => c.id === selectedCardId);
+        if (!selectedCard || !selectedAddressId || !ccv) return;
+
+        setOrderPlacing(true);
+        try {
+            const payload = {
+                address_id: selectedAddressId,
+                order_date: new Date().toISOString(),
+                card_no: parseInt(selectedCard.card_no),
+                card_name: selectedCard.name_on_card,
+                card_expire_month: selectedCard.expire_month,
+                card_expire_year: selectedCard.expire_year,
+                card_ccv: parseInt(ccv),
+                price: grandTotal,
+                products: checkedItems.map((item) => ({
+                    product_id: item.product.id,
+                    count: item.count,
+                    detail: item.product.name,
+                })),
+            };
+            await axiosInstance.post('/order', payload);
+            // ✅ Clear cart and show success screen
+            dispatch(setCart([]));
+            setOrderSuccess(true);
+        } catch (err) {
+            console.warn('Failed to place order:', err);
+            alert('Sipariş oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.');
+        } finally {
+            setOrderPlacing(false);
+        }
+    };
+
     const maskCard = (cardNo) => {
         if (!cardNo) return '';
         const str = String(cardNo);
         return str.slice(0, 4) + ' ' + str.slice(4, 8).replace(/./g, '*') + ' **** ' + str.slice(-4);
     };
 
+    if (!authChecked) {
+        return (
+            <div className='flex justify-center items-center py-[80px]'>
+                <div className='w-[40px] h-[40px] border-[4px] border-[#23A6F0] border-t-transparent rounded-full animate-spin'></div>
+            </div>
+        );
+    }
+
     if (!user?.email) return null;
+
+    if (orderSuccess) {
+        return (
+            <div className='flex flex-col items-center justify-center py-[80px] gap-[24px] text-center'>
+                <CheckCircle size={80} className='text-[#23A6F0]' />
+                <h2 className='font-bold text-[32px] text-[#252B42]'>
+                    Siparişiniz Alındı!
+                </h2>
+                <p className='text-[16px] text-[#737373] max-w-[400px]'>
+                    Siparişiniz başarıyla oluşturuldu. En kısa sürede hazırlanıp kargoya verilecektir. Teşekkür ederiz!
+                </p>
+                <div className='flex gap-[16px] mt-[8px]'>
+                    <button
+                        onClick={() => history.push('/')}
+                        className='px-[24px] py-[12px] border-[1px] border-[#23A6F0] text-[#23A6F0]
+                        font-bold text-[14px] rounded-[5px] hover:bg-blue-50 cursor-pointer transition-colors'
+                    >
+                        Ana Sayfaya Dön
+                    </button>
+                    <button
+                        onClick={() => history.push('/shop')}
+                        className='px-[24px] py-[12px] bg-[#23A6F0] text-white font-bold text-[14px]
+                        rounded-[5px] hover:bg-[#1a8fd1] cursor-pointer transition-colors'
+                    >
+                        Alışverişe Devam Et
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    const selectedCard = cards.find((c) => c.id === selectedCardId);
+    const canPlaceOrder = selectedAddressId && selectedCardId && ccv.length >= 3;
 
     const OrderSummary = ({ buttonLabel, buttonDisabled, onButtonClick }) => (
         <div className='flex flex-col gap-[12px] w-full'>
@@ -208,7 +297,7 @@ function OrderPage() {
                 hover:bg-[#1a8fd1] transition-colors cursor-pointer
                 disabled:opacity-50 disabled:cursor-not-allowed'
             >
-                <span>{buttonLabel}</span>
+                <span>{orderPlacing ? 'İşleniyor...' : buttonLabel}</span>
                 <span>›</span>
             </button>
             <div className='p-[24px] bg-white border-[1px] border-[#ECECEC] rounded-[8px]'>
@@ -248,7 +337,7 @@ function OrderPage() {
                 hover:bg-[#1a8fd1] transition-colors cursor-pointer
                 disabled:opacity-50 disabled:cursor-not-allowed'
             >
-                <span>{buttonLabel}</span>
+                <span>{orderPlacing ? 'İşleniyor...' : buttonLabel}</span>
                 <span>›</span>
             </button>
         </div>
@@ -263,9 +352,9 @@ function OrderPage() {
                     className={`flex items-center gap-[8px] px-[24px] py-[16px] font-bold text-[14px]
                     border-b-[2px] transition-colors cursor-pointer
                     ${activeStep === 1
-                        ? 'border-[#23A6F0] text-[#23A6F0]'
-                        : 'border-transparent text-[#737373] hover:text-[#252B42]'
-                    }`}
+                            ? 'border-[#23A6F0] text-[#23A6F0]'
+                            : 'border-transparent text-[#737373] hover:text-[#252B42]'
+                        }`}
                 >
                     <span className={`w-[28px] h-[28px] rounded-full font-bold text-[14px]
                     flex items-center justify-center
@@ -279,9 +368,9 @@ function OrderPage() {
                     className={`flex items-center gap-[8px] px-[24px] py-[16px] font-bold text-[14px]
                     border-b-[2px] transition-colors cursor-pointer
                     ${activeStep === 2
-                        ? 'border-[#23A6F0] text-[#23A6F0]'
-                        : 'border-transparent text-[#737373] hover:text-[#252B42]'
-                    }`}
+                            ? 'border-[#23A6F0] text-[#23A6F0]'
+                            : 'border-transparent text-[#737373] hover:text-[#252B42]'
+                        }`}
                 >
                     <span className={`w-[28px] h-[28px] rounded-full font-bold text-[14px]
                     flex items-center justify-center
@@ -325,8 +414,8 @@ function OrderPage() {
                                             onClick={() => setSelectedAddressId(addr.id)}
                                             className={`p-[16px] border-[2px] rounded-[8px] cursor-pointer
                                             transition-colors ${selectedAddressId === addr.id
-                                                ? 'border-[#23A6F0] bg-blue-50'
-                                                : 'border-[#ECECEC] bg-white hover:border-[#23A6F0]'}`}
+                                                    ? 'border-[#23A6F0] bg-blue-50'
+                                                    : 'border-[#ECECEC] bg-white hover:border-[#23A6F0]'}`}
                                         >
                                             <div className='flex justify-between items-start mb-[8px]'>
                                                 <div className='flex items-center gap-[8px]'>
@@ -496,8 +585,8 @@ function OrderPage() {
                                                     onClick={() => setSelectedCardId(card.id)}
                                                     className={`p-[16px] border-[2px] rounded-[8px] cursor-pointer transition-colors
                                                     ${selectedCardId === card.id
-                                                        ? 'border-[#23A6F0] bg-blue-50'
-                                                        : 'border-[#ECECEC] bg-white hover:border-[#23A6F0]'}`}
+                                                            ? 'border-[#23A6F0] bg-blue-50'
+                                                            : 'border-[#ECECEC] bg-white hover:border-[#23A6F0]'}`}
                                                 >
                                                     <div className='flex justify-between items-start'>
                                                         <div className='flex items-center gap-[8px]'>
@@ -529,6 +618,25 @@ function OrderPage() {
                                                     </p>
                                                 </div>
                                             ))}
+                                            {selectedCardId && (
+                                                <div className='mt-[8px]'>
+                                                    <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>
+                                                        CVV / CVC
+                                                    </label>
+                                                    <input
+                                                        type='password'
+                                                        value={ccv}
+                                                        onChange={(e) => setCcv(e.target.value.replace(/\D/g, '').slice(0, 4))}
+                                                        placeholder='•••'
+                                                        maxLength={4}
+                                                        className='w-[120px] h-[44px] px-[12px] border-[1px] border-[#BDBDBD]
+                                                        rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0] tracking-widest'
+                                                    />
+                                                    <p className='text-[12px] text-[#737373] mt-[4px]'>
+                                                        Kartınızın arkasındaki 3-4 haneli güvenlik kodu
+                                                    </p>
+                                                </div>
+                                            )}
                                         </div>
 
                                         {showCardForm && (
@@ -632,7 +740,7 @@ function OrderPage() {
                         <OrderSummary
                             buttonLabel='Ödeme Yap'
                             buttonDisabled={!selectedCardId}
-                            onButtonClick={() => console.log('Order placed!')}
+                            onButtonClick={handlePlaceOrder}
                         />
                     )}
                 </div>

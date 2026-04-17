@@ -26,12 +26,21 @@ import unsplash1 from "../design/unsplash1.png";
 import unsplash2 from "../design/unsplash2.png";
 import { AlarmClock, ChartArea, ChevronRight, CircleFadingPlus, Facebook, Instagram, Twitter } from 'lucide-react';
 
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getCategoryPath } from '../utils/categoryHelpers';
+
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [slide1, slide2];
   const footSlides = [footcover, footcover1];
   const [footSlide, setFootSlide] = useState(0);
+
+  const productList = useSelector((state) => state.product.productList) || [];
+  const top8Products = [...productList]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 8);
 
   return (
     <main>
@@ -62,10 +71,10 @@ function HomePage() {
           [@media(min-width:1024px)]:w-[470px]'>
             We know how large objects will act, but things on a small scale.
           </p>
-          <button class='mt-[50px] w-[185px] h-[52px] bg-[url("./design/button.png")] bg-contain bg-no-repeat 
+          <a href="/shop" class='mt-[50px] w-[185px] h-[52px] bg-[url("./design/button.png")] bg-contain bg-no-repeat 
           bg-center border-none cursor-pointer [@media(min-width:1024px)]:items-start 
           [@media(min-width:1024px)]:ml-[96px] [@media(min-width:1024px)]:ml-[150px]'>
-          </button>
+          </a>
         </div>
       </section>
       <section class='w-[400px] h-[1750px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
@@ -114,10 +123,10 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section class='w-[400px] h-[4822px] gap-[48px] [@media(min-width:1024px)]:h-[1652px] 
+      <section class='w-[400px]  gap-[48px] [@media(min-width:1024px)]:h-[1252px] 
       [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:gap-[20px]'>
         <div class='flex justify-center mt-[48px] flex-col items-center gap-[10px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col [@media(min-width:1024px)]:mt-[0]'>
-          <h4 class='text-center w-[191px] h-[30px] font-[400px] text-[#737373] font-[Arial, Sans-serif'>
+          <h4 class='text-center w-[191px] h-[30px] font-[400px] text-[#737373] text-[22px] font-[Arial, Sans-serif'>
             Featured Products
           </h4>
           <h3 class='text-center w-[181px] font-[Arial, Sans-serif] font-bold text-[22px] leading-[32px] tracking-[0.1px] 
@@ -129,291 +138,53 @@ function HomePage() {
             Problems trying to resolve the conflict between
           </p>
         </div>
-        <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
-        [@media(min-width:1024px)]:gap-[10px]'>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover5})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover4})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
+        <div style={{
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
+          gap: '16px', width: '100%', maxWidth: '1024px'
+        }}>
+          {top8Products.map((product) => (
+            <div key={product.id} style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+              width: '238px', marginBottom: '16px'
+            }}>
+              
+              <div style={{
+                width: '238px', height: '300px',
+                backgroundImage: `url(${product.images?.[0]?.url})`,
+                backgroundSize: 'cover', backgroundPosition: 'center',
+                backgroundColor: '#f0f0f0'
+              }} />
+              <div style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                padding: '16px', gap: '8px', width: '100%'
+              }}>
+                <h5 style={{ fontWeight: 'bold', fontSize: '16px', color: '#252B42', textAlign: 'center' }}>
+                  {product.name}
+                </h5>
+                <p style={{
+                  fontSize: '14px', color: '#737373', textAlign: 'center',
+                  overflow: 'hidden', display: '-webkit-box',
+                  WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'
+                }}>
+                  {product.description}
+                </p>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <span style={{ fontSize: '16px', color: '#BDBDBD', fontWeight: 'bold' }}>
+                    ${(product.price * 1.2).toFixed(2)}
+                  </span>
+                  <span style={{ fontSize: '16px', color: '#23856D', fontWeight: 'bold' }}>
+                    ${product.price.toFixed(2)}
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: '6px' }}>
+                  <button style={{ width: '16px', height: '16px', borderRadius: '50%', background: '#23A6F0', border: 'none', cursor: 'pointer' }} />
+                  <button style={{ width: '16px', height: '16px', borderRadius: '50%', background: '#23856D', border: 'none', cursor: 'pointer' }} />
+                  <button style={{ width: '16px', height: '16px', borderRadius: '50%', background: '#E77C40', border: 'none', cursor: 'pointer' }} />
+                  <button style={{ width: '16px', height: '16px', borderRadius: '50%', background: '#252B42', border: 'none', cursor: 'pointer' }} />
+                </div>
               </div>
             </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover3})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover2})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='hidden [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
-        [@media(min-width:1024px)]:gap-[10px]'>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover6})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover7})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover8})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover9})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class='[@media(min-width:1024px)]:hidden [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row 
-        [@media(min-width:1024px)]:gap-[10px]'>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover1})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover0})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover [@media(min-width:1024px)]:w-[238px]'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
-          <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col 
-          [@media(min-width:1024px)]:w-[238px] [@media(min-width:1024px)]:h-[705px] 
-          [@media(min-width:1024px)]:items-center'>
-            <div href="#" style={{ backgroundImage: `url(${productcover})` }} class='h-[427px] w-[348px] bg-center 
-            ml-[45px] mt-[16px] bg-cover'>
-            </div>
-            <div class='flex flex-col items-center w-[348px] h-[188px] mt-[25px] mx-[25px] mb-[35px] gap-[10px]'>
-              <h5 class='font-bold text-[16px] leading-[24px] tracking-[0.1px] text-[#252B42]'>
-                Graphic Design
-              </h5>
-              <a href='#' class='mx-auto font-bold text-[14px] leading-[24px] text-[#737373]'>
-                English Department
-              </a>
-              <div class='flex flex-row items-center gap-[5px]'>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#BDBDBD]'>$16.48</h5>
-                <h5 class='font-[700] text-[16px] leading-[24px] text-[#23856D]'>$6.48</h5>
-              </div>
-              <div class='flex justify-center w-[82.23px] h-[16px] gap-[6.08px]'>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23A6F0] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#23856D] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#E77C40] hover:ring-2 hover:ring-black'></button>
-                <button class='w-[16px] h-[16px] rounded-full bg-[#252B42] hover:ring-2 hover:ring-black'></button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
       <section class='w-[400px] h-[1300px] bg-[#23856D] gap-[35px] [@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-row
@@ -497,7 +268,7 @@ function HomePage() {
         <div style={{ backgroundImage: `url(${asianclothes1})` }} class='flex flex-col w-[414px] h-[407px] mt-[30px] 
         bg-no-repeat [@media(min-width:1024px)]:w-[504px]'></div>
       </section>
-      <section class='mx-auto flex flex-col w-[400px] h-[2302px] py-[20px] gap-[80px] bg-[#FFFFFF]
+      <section class='flex flex-col w-[400px] h-[2302px] py-[20px] gap-[80px] bg-[#FFFFFF]
       [@media(min-width:1024px)]:w-[1024px] [@media(min-width:1024px)]:h-[944px]'>
         <div class='mx-auto flex flex-col w-[300px] h-[184px] gap-[10px] @media(min-width:1024px)]:w-[1024px]'>
           <h6 class='mx-auto w-[114px] h-[24px] font-[700] text-[14px] leading-[24px] tracking-[0.2px] text-[#23A6F0] 
@@ -513,7 +284,7 @@ function HomePage() {
             Problems trying to resolve the conflict between the two major
           </p>
         </div>
-        <div class='flex flex-col w-[330px] h-[1878px] gap-[5px] mx-auto [@media(min-width:1024px)]:flex
+        <div class='[@media(max-width:400px)]:mx-auto flex flex-col w-[330px] h-[1878px] gap-[20px] [@media(min-width:1024px)]:flex
         [@media(min-width:1024px)]:flex-row [@media(min-width:1024px)]:w-[1024px]
         [@media(min-width:1024px)]:space-between'>
           <div class='[@media(min-width:1024px)]:flex [@media(min-width:1024px)]:flex-col '>

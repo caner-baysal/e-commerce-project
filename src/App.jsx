@@ -17,6 +17,7 @@ import { autoLogin } from './actions/clientActions';
 import { fetchCategories, fetchProducts } from './actions/productActions';
 import CartPage from './pages/CartPAge';
 import OrderPage from './pages/OrderPage';
+import PreviousOrdersPage from './pages/PreviousOrdersPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/shop" component={ShopPage} />
         <Route exact path="/cart" component={CartPage}/>
         <Route exact path="/order" component={OrderPage}/>
+        <Route exact path="/orders" component={PreviousOrdersPage}/>
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/team" component={TeamPage} />
         <Route exact path="/signup" component={SignUpPage} />
