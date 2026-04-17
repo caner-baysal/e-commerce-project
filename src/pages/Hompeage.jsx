@@ -5,17 +5,7 @@ import filter from "../design/filter.png";
 import filter1 from "../design/filter1.png";
 import filter2 from "../design/filter2.png";
 import filter3 from "../design/filter3.png";
-import productcover9 from "../design/productcover9.png";
-import productcover8 from "../design/productcover8.png";
-import productcover7 from "../design/productcover7.png";
-import productcover6 from "../design/productcover6.png";
-import productcover5 from "../design/productcover5.png";
-import productcover4 from "../design/productcover4.png";
-import productcover3 from "../design/productcover3.png";
-import productcover2 from "../design/productcover2.png";
-import productcover1 from "../design/productcover1.png";
-import productcover0 from "../design/productcover0.png";
-import productcover from "../design/productcover.png";
+
 import next from "../design/carousel-control-next.png";
 import prev from "../design/carousel-control-prev.png";
 import footcover from "../design/footcover.png";
@@ -28,7 +18,7 @@ import { AlarmClock, ChartArea, ChevronRight, CircleFadingPlus, Facebook, Instag
 
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCategoryPath } from '../utils/categoryHelpers';
+
 
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +31,15 @@ function HomePage() {
   const top8Products = [...productList]
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 8);
+
+  const getProductPath = (product) => {
+    const slug = product.name.toLowerCase()
+      .replace(/ş/g, "s").replace(/ı/g, "i").replace(/ğ/g, "g")
+      .replace(/ü/g, "u").replace(/ö/g, "o").replace(/ç/g, "c")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+    return `/shop/genel/kategori/0/${slug}/${product.id}`;
+  };
 
   return (
     <main>
@@ -143,11 +142,11 @@ function HomePage() {
           gap: '16px', width: '100%', maxWidth: '1024px'
         }}>
           {top8Products.map((product) => (
-            <div key={product.id} style={{
+            <Link key={product.id} to={getProductPath(product)} style={{
               display: 'flex', flexDirection: 'column', alignItems: 'center',
               width: '238px', marginBottom: '16px'
             }}>
-              
+
               <div style={{
                 width: '238px', height: '300px',
                 backgroundImage: `url(${product.images?.[0]?.url})`,
@@ -183,7 +182,7 @@ function HomePage() {
                   <button style={{ width: '16px', height: '16px', borderRadius: '50%', background: '#252B42', border: 'none', cursor: 'pointer' }} />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

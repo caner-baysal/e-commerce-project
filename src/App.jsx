@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { autoLogin } from './actions/clientActions';
 import { fetchCategories, fetchProducts } from './actions/productActions';
+
 import OrderPage from './pages/OrderPage';
 import PreviousOrdersPage from './pages/PreviousOrdersPage';
 import CartPage from './pages/CartPage';
