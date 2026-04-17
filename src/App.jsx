@@ -15,9 +15,9 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { autoLogin } from './actions/clientActions';
 import { fetchCategories, fetchProducts } from './actions/productActions';
-import CartPage from './pages/CartPAge';
 import OrderPage from './pages/OrderPage';
 import PreviousOrdersPage from './pages/PreviousOrdersPage';
+import CartPage from './pages/CartPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,9 +37,9 @@ function App() {
         <Route exact path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId" component={ProductPage} />
         <Route exact path="/shop/:gender/:categoryName/:categoryId" component={ShopPage} />
         <Route exact path="/shop" component={ShopPage} />
-        <Route exact path="/cart" component={CartPage}/>
-        <Route exact path="/order" component={OrderPage}/>
-        <Route exact path="/orders" component={PreviousOrdersPage}/>
+        <Route exact path="/cart" component={CartPage} />
+        <Route exact path="/order" component={OrderPage} />
+        <Route exact path="/orders" component={PreviousOrdersPage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/team" component={TeamPage} />
         <Route exact path="/signup" component={SignUpPage} />
