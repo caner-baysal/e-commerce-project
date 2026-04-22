@@ -41,11 +41,7 @@ const PRODUCTS_PER_PAGE = 24;
 function ShopPage() {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  //const [sortBy, setSortBy] = useState('Popularity');
-  //const [filters, setFilters] = useState({});
-
-  //const totalPages = 10;
-
+  
   const [sort, setSort] = useState("");
   const [filterText, setFilterText] = useState("");
 
@@ -244,7 +240,7 @@ function ShopPage() {
                 >
                   <div
                     className='w-[348px] h-[427px] bg-center bg-cover
-            [@media(min-width:1024px)]:w-[238px]'
+                    [@media(min-width:1024px)]:w-[238px]'
                     style={{
                       backgroundImage: product.images?.[0]?.url
                         ? `url(${product.images[0].url})`
@@ -253,7 +249,7 @@ function ShopPage() {
                   />
                   <div className='flex flex-col items-center w-full mt-[25px] gap-[10px] px-[10px]'>
                     <h5 className='font-bold text-[16px] leading-[24px] tracking-[0.1px]
-            text-[#252B42] text-center'>
+                    text-[#252B42] text-center'>
                       {product.name}
                     </h5>
                     <p className='text-[14px] leading-[20px] text-[#737373] text-center line-clamp-2'>

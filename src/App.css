@@ -1,229 +1,33 @@
 @import "tailwindcss";
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  padding: 40px 0;
-}
-
-.mobile-nav.open {
-  display: flex;
-}
-
-.mobile-nav a {
-  text-decoration: none;
-  color: #777;
-  font-size: 22px;
-}
-
-.login-register {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 10px;
-  cursor: pointer;
-  color: blue;
-  font-weight: bold;
-}
-
-.like {
-  display: none;
-}
-
-.hero {
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
-  color: white;
-  text-align: center;
-}
-
-.hero-content {
-  display: flex;
-  justify-content: center;
-  padding-top: 70px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.season {
-  margin-top: 60px;
-  font-weight: bold;
-  font-size: 10px;
-}
-
-.collection {
-  margin-top: 50px;
-  font-weight: bold;
-  font-size: 25px;
+    font-family: Arial, sans-serif;
 }
 
 .left-btn {
-  background-image: url("./design/carousel-control-prev.png");
-  background-color: transparent;
-  height: 50px;
-  width: 24px;
-  border: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
+    background-image: url("./design/carousel-control-prev.png");
+    background-color: transparent;
+    height: 50px;
+    width: 24px;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .right-btn {
-  background-image: url("./design/carousel-control-next.png");
-  background-color: transparent;
-  height: 50px;
-  width: 24px;
-  border: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-}
-
-.desc {
-  text-align: center;
-  padding-left: 15%;
-  padding-right: 15%;
-  font-weight: normal;
-}
-
-.shop-now-btn {
-  margin-top: 50px;
-  width: 185px;
-  height: 52px;
-  background-image: url("./design/button.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-}
-
-@media(min-width: 1024px) {
-
-  .header-top {
-    display: flex;
-    align-items: center;
-  }
-
-  .header-left {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .logo {
-    grid-column: 1;
-  }
-
-  .mobile-nav {
-    display: none !important;
-  }
-
-
-  .login-register {
-    display: flex;
-    background: transparent;
+    background-image: url("./design/carousel-control-next.png");
+    background-color: transparent;
+    height: 50px;
+    width: 24px;
     border: none;
-    font-size: 14px;
     cursor: pointer;
-    color: blue;
-    font-weight: bold;
-  }
-
-  .search {
-    display: flex;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    color: blue;
-    font-weight: bold;
-  }
-
-  .shopping {
-    display: flex;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    color: blue;
-    font-weight: bold;
-  }
-
-  .like {
-    display: flex;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    color: blue;
-    font-weight: bold;
-  }
-
-  .hamburger-btn {
-    display: none;
-  }
-
-  .hero {
-    height: 100vh;
-    width: 100%;
-    background-image: url("./design/shop-hero-1-product-slide-1.jpg");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-  }
-
-  .hero-content {
-    display: flex;
-    align-items: flex-start;
-  }
-  .season {
-    padding-left: 15%;
-  }
-
-  .collection {
-    padding-left: 15%;
-  }
-  
-  .shop-now-btn {
-    margin-left: 15%;
-  }
+    background-position: center;
 }
