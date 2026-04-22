@@ -62,14 +62,14 @@ function CartPage() {
     if (cart.length === 0) {
         return (
             <div className='flex flex-col items-center justify-center py-[80px] gap-[24px]'>
-                <h2 className='font-bold text-[24px] text-[#252B42]'>Sepetiniz boş</h2>
-                <p className='text-[14px] text-[#737373]'>Alışverişe başlamak için ürünlere göz atın.</p>
+                <h2 className='font-bold text-[24px] text-[#252B42]'>Sepetiniz boş (Empty)</h2>
+                <p className='text-[14px] text-[#737373]'>Alışverişe başlamak için ürünlere göz atın. (Check Products to Start Shopping)</p>
                 <Link
                     to='/shop'
                     className='px-[24px] py-[12px] bg-[#23A6F0] text-white font-bold text-[14px]
                     rounded-[5px] hover:bg-[#1a8fd1] transition-colors'
                 >
-                    Alışverişe Başla
+                    Alışverişe Başla (Start Shopping)
                 </Link>
             </div>
         );
@@ -77,7 +77,7 @@ function CartPage() {
     return (
         <main className='w-[400px] [@media(min-width:1024px)]:w-[1024px] mx-auto py-[24px]'>
             <h2 className='font-bold text-[24px] text-[#252B42] mb-[24px]'>
-                Sepetim ({cart.length} Ürün)
+                Sepetim (My Cart) ({cart.length} Ürün)
             </h2>
 
             <div className='flex items-center gap-[12px] mb-[16px] p-[16px] bg-[#FAFAFA] rounded-[8px]'>
@@ -88,7 +88,7 @@ function CartPage() {
                     className='w-[18px] h-[18px] cursor-pointer accent-[#23A6F0]'
                 />
                 <span className='font-bold text-[14px] text-[#252B42]'>
-                    Tümünü Seç ({cart.length} Ürün)
+                    Tümünü Seç (Select All) ({cart.length} Ürün)
                 </span>
             </div>
 
@@ -121,7 +121,7 @@ function CartPage() {
                                 {item.product.description}
                             </span>
                             <span className='text-[12px] text-[#737373]'>
-                                Stok: {item.product.stock} adet
+                                Stok (Stock): {item.product.stock} adet
                             </span>
                         </div>
 
@@ -172,25 +172,25 @@ function CartPage() {
                         hover:bg-[#d96a10] transition-colors cursor-pointer
                         disabled:opacity-50 disabled:cursor-not-allowed'
                 >
-                    <span>Sepeti Onayla</span>
+                    <span>Sepeti Onayla (Approve Cart)</span>
                     <span>›</span>
                 </Link>
 
                 <div className='p-[24px] bg-white border-[1px] border-[#ECECEC] rounded-[8px]'>
                     <h3 className='font-bold text-[20px] text-[#252B42] mb-[20px]'>
-                        Sipariş Özeti
+                        Sipariş Özeti (Order Sum)
                     </h3>
 
                     <div className='flex flex-col gap-[12px]'>
                         <div className='flex justify-between items-center'>
-                            <span className='text-[14px] text-[#252B42]'>Ürünün Toplamı</span>
+                            <span className='text-[14px] text-[#252B42]'>Ürünün Toplamı (Total)</span>
                             <span className='font-bold text-[14px] text-[#252B42]'>
                                 ${cartTotal.toFixed(2)}
                             </span>
                         </div>
 
                         <div className='flex justify-between items-center'>
-                            <span className='text-[14px] text-[#252B42]'>Kargo Toplam</span>
+                            <span className='text-[14px] text-[#252B42]'>Kargo Toplam (Cargo Total)</span>
                             <span className='font-bold text-[14px] text-[#252B42]'>
                                 ${SHIPPING_COST.toFixed(2)}
                             </span>
@@ -199,7 +199,7 @@ function CartPage() {
                         {shippingDiscount > 0 && (
                             <div className='flex justify-between items-start gap-[8px]'>
                                 <span className='text-[13px] text-[#252B42] flex-1'>
-                                    {FREE_SHIPPING_THRESHOLD} $ ve Üzeri Kargo Bedava (Satıcı Karşılar)
+                                    {FREE_SHIPPING_THRESHOLD} $ ve Üzeri Kargo Bedava (Free Shipping)
                                 </span>
                                 <span className='font-bold text-[14px] text-[#23A6F0] flex-shrink-0'>
                                     -${shippingDiscount.toFixed(2)}
@@ -209,7 +209,7 @@ function CartPage() {
 
                         <div className='border-t-[1px] border-[#23A6F0] pt-[12px]'>
                             <div className='flex justify-between items-center'>
-                                <span className='text-[16px] text-[#252B42]'>Toplam</span>
+                                <span className='text-[16px] text-[#252B42]'>Toplam (Grand Total)</span>
                                 <span className='font-bold text-[18px] text-[#23A6F0]'>
                                     ${grandTotal.toFixed(2)}
                                 </span>
@@ -226,7 +226,7 @@ function CartPage() {
                         hover:bg-[#d96a10] transition-colors cursor-pointer
                         disabled:opacity-50 disabled:cursor-not-allowed'
                 >
-                    <span>Sepeti Onayla</span>
+                    <span>Sepeti Onayla (Approve Cart)</span>
                     <span>›</span>
                 </Link>
                  <Link
@@ -234,7 +234,7 @@ function CartPage() {
                     className='block text-center mt-[12px] text-[14px] text-[#23A6F0]
                     hover:underline cursor-pointer'
                 >
-                    Alışverişe Devam Et
+                    Alışverişe Devam Et (Keep Shopping)
                 </Link>
             </div>
         </main>

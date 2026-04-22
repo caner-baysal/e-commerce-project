@@ -226,13 +226,12 @@ function OrderPage() {
                     detail: item.product.name,
                 })),
             };
-            await axiosInstance.post('/order', payload);
-            // ✅ Clear cart and show success screen
+            await axiosInstance.post('/order', payload)
             dispatch(setCart([]));
             setOrderSuccess(true);
         } catch (err) {
             console.warn('Failed to place order:', err);
-            alert('Sipariş oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.');
+            alert('Sipariş oluşturulurken bir hata oluştu. Lütfen tekrar deneyin. (Failed to Create Address. Try Again)');
         } finally {
             setOrderPlacing(false);
         }
@@ -259,10 +258,10 @@ function OrderPage() {
             <div className='flex flex-col items-center justify-center py-[80px] gap-[24px] text-center'>
                 <CheckCircle size={80} className='text-[#23A6F0]' />
                 <h2 className='font-bold text-[32px] text-[#252B42]'>
-                    Siparişiniz Alındı!
+                    Siparişiniz Alındı! (Ordered)
                 </h2>
                 <p className='text-[16px] text-[#737373] max-w-[400px]'>
-                    Siparişiniz başarıyla oluşturuldu. En kısa sürede hazırlanıp kargoya verilecektir. Teşekkür ederiz!
+                    Siparişiniz başarıyla oluşturuldu. En kısa sürede hazırlanıp kargoya verilecektir. Teşekkür ederiz! (Order Placed and Will be Delivered to Cargo ASAP.)
                 </p>
                 <div className='flex gap-[16px] mt-[8px]'>
                     <button
@@ -270,14 +269,14 @@ function OrderPage() {
                         className='px-[24px] py-[12px] border-[1px] border-[#23A6F0] text-[#23A6F0]
                         font-bold text-[14px] rounded-[5px] hover:bg-blue-50 cursor-pointer transition-colors'
                     >
-                        Ana Sayfaya Dön
+                        Ana Sayfaya Dön (Home Page)
                     </button>
                     <button
                         onClick={() => history.push('/shop')}
                         className='px-[24px] py-[12px] bg-[#23A6F0] text-white font-bold text-[14px]
                         rounded-[5px] hover:bg-[#1a8fd1] cursor-pointer transition-colors'
                     >
-                        Alışverişe Devam Et
+                        Alışverişe Devam Et (Keep Shopping)
                     </button>
                 </div>
             </div>
@@ -297,24 +296,24 @@ function OrderPage() {
                 hover:bg-[#1a8fd1] transition-colors cursor-pointer
                 disabled:opacity-50 disabled:cursor-not-allowed'
             >
-                <span>{orderPlacing ? 'İşleniyor...' : buttonLabel}</span>
+                <span>{orderPlacing ? 'İşleniyor... (Processing)' : buttonLabel}</span>
                 <span>›</span>
             </button>
             <div className='p-[24px] bg-white border-[1px] border-[#ECECEC] rounded-[8px]'>
-                <h3 className='font-bold text-[20px] text-[#252B42] mb-[20px]'>Sipariş Özeti</h3>
+                <h3 className='font-bold text-[20px] text-[#252B42] mb-[20px]'>Sipariş Özeti (Order Sum)</h3>
                 <div className='flex flex-col gap-[12px]'>
                     <div className='flex justify-between items-center'>
-                        <span className='text-[14px] text-[#252B42]'>Ürünün Toplamı</span>
+                        <span className='text-[14px] text-[#252B42]'>Ürünün Toplamı (Product Tolal)</span>
                         <span className='font-bold text-[14px] text-[#252B42]'>${cartTotal.toFixed(2)}</span>
                     </div>
                     <div className='flex justify-between items-center'>
-                        <span className='text-[14px] text-[#252B42]'>Kargo Toplam</span>
+                        <span className='text-[14px] text-[#252B42]'>Kargo Toplam (Cargo Total)</span>
                         <span className='font-bold text-[14px] text-[#252B42]'>${SHIPPING_COST.toFixed(2)}</span>
                     </div>
                     {shippingDiscount > 0 && (
                         <div className='flex justify-between items-start gap-[8px]'>
                             <span className='text-[13px] text-[#252B42] flex-1'>
-                                {FREE_SHIPPING_THRESHOLD}$ ve Üzeri Kargo Bedava (Satıcı Karşılar)
+                                {FREE_SHIPPING_THRESHOLD}$ ve Üzeri Kargo Bedava (Free Shipping)
                             </span>
                             <span className='font-bold text-[14px] text-[#23A6F0] flex-shrink-0'>
                                 -${shippingDiscount.toFixed(2)}
@@ -323,7 +322,7 @@ function OrderPage() {
                     )}
                     <div className='border-t-[1px] border-[#ECECEC] pt-[12px]'>
                         <div className='flex justify-between items-center'>
-                            <span className='text-[16px] text-[#252B42]'>Toplam</span>
+                            <span className='text-[16px] text-[#252B42]'>Toplam (Grand Total)</span>
                             <span className='font-bold text-[18px] text-[#23A6F0]'>${grandTotal.toFixed(2)}</span>
                         </div>
                     </div>
@@ -337,7 +336,7 @@ function OrderPage() {
                 hover:bg-[#1a8fd1] transition-colors cursor-pointer
                 disabled:opacity-50 disabled:cursor-not-allowed'
             >
-                <span>{orderPlacing ? 'İşleniyor...' : buttonLabel}</span>
+                <span>{orderPlacing ? 'İşleniyor... (Processing)' : buttonLabel}</span>
                 <span>›</span>
             </button>
         </div>
@@ -361,7 +360,7 @@ function OrderPage() {
                     ${activeStep === 1 ? 'bg-[#23A6F0] text-white' : 'bg-[#BDBDBD] text-white'}`}>
                         1
                     </span>
-                    Adres Bilgileri
+                    Adres Bilgileri (Adress Info)
                 </button>
                 <button
                     onClick={() => setActiveStep(2)}
@@ -377,7 +376,7 @@ function OrderPage() {
                     ${activeStep === 2 ? 'bg-[#23A6F0] text-white' : 'bg-[#BDBDBD] text-white'}`}>
                         2
                     </span>
-                    Ödeme Seçenekleri
+                    Ödeme Seçenekleri (Payment Oprions)
                 </button>
             </div>
 
@@ -387,7 +386,7 @@ function OrderPage() {
 
                     {activeStep === 1 && (
                         <>
-                            <h2 className='font-bold text-[20px] text-[#252B42]'>Teslimat Adresi</h2>
+                            <h2 className='font-bold text-[20px] text-[#252B42]'>Teslimat Adresi (Delivery Address)</h2>
 
                             {addressLoading ? (
                                 <div className='flex justify-center py-[40px]'>
@@ -405,7 +404,7 @@ function OrderPage() {
                                         hover:bg-blue-50 transition-colors cursor-pointer'
                                     >
                                         <Plus size={24} />
-                                        <span>Yeni Adres Ekle</span>
+                                        <span>Yeni Adres Ekle (Add New Address)</span>
                                     </button>
 
                                     {addresses.map((addr) => (
@@ -454,44 +453,44 @@ function OrderPage() {
                             {showAddressForm && (
                                 <div className='p-[24px] border-[1px] border-[#23A6F0] rounded-[8px] bg-white mt-[8px]'>
                                     <h3 className='font-bold text-[16px] text-[#252B42] mb-[16px]'>
-                                        {editingAddress ? 'Adresi Düzenle' : 'Yeni Adres Ekle'}
+                                        {editingAddress ? 'Adresi Düzenle (Edit Address)' : 'Yeni Adres Ekle (Add New Address)'}
                                     </h3>
                                     <form onSubmit={handleAddressSubmit(onSubmitAddress)} className='flex flex-col gap-[12px]'>
                                         <div>
-                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Adres Başlığı</label>
-                                            <input {...registerAddress('title', { required: 'Adres başlığı gerekli' })}
-                                                placeholder='Örn: Ev, İş'
+                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Adres Başlığı (Address Title)</label>
+                                            <input {...registerAddress('title', { required: 'Adres başlığı gerekli (Address Title Required)' })}
+                                                placeholder='Örn: Ev, İş (Home, Work ect...)'
                                                 className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                             {addressErrors.title && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.title.message}</p>}
                                         </div>
                                         <div className='flex gap-[12px]'>
                                             <div className='flex-1'>
-                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Ad</label>
-                                                <input {...registerAddress('name', { required: 'Ad gerekli' })}
-                                                    placeholder='Adınız'
+                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Ad (Name)</label>
+                                                <input {...registerAddress('name', { required: 'Ad gerekli (Name Required)' })}
+                                                    placeholder='Adınız (Name)'
                                                     className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                                 {addressErrors.name && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.name.message}</p>}
                                             </div>
                                             <div className='flex-1'>
-                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Soyad</label>
-                                                <input {...registerAddress('surname', { required: 'Soyad gerekli' })}
-                                                    placeholder='Soyadınız'
+                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Soyad (Surname)</label>
+                                                <input {...registerAddress('surname', { required: 'Soyad gerekli (Surname Required)' })}
+                                                    placeholder='Soyadınız (Surname)'
                                                     className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                                 {addressErrors.surname && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.surname.message}</p>}
                                             </div>
                                         </div>
                                         <div>
-                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Telefon</label>
-                                            <input {...registerAddress('phone', { required: 'Telefon gerekli' })}
+                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Telefon (Phone)</label>
+                                            <input {...registerAddress('phone', { required: 'Telefon gerekli (Phone Required)' })}
                                                 placeholder='05xxxxxxxxx'
                                                 className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                             {addressErrors.phone && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.phone.message}</p>}
                                         </div>
                                         <div>
-                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>İl</label>
-                                            <select {...registerAddress('city', { required: 'İl seçiniz' })}
+                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>İl (City)</label>
+                                            <select {...registerAddress('city', { required: 'İl seçiniz (Choose City)' })}
                                                 className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0] bg-white cursor-pointer'>
-                                                <option value=''>İl seçiniz</option>
+                                                <option value=''>İl seçiniz (Choose City)</option>
                                                 {CITIES.map((city) => (
                                                     <option key={city} value={city.toLowerCase()}>{city}</option>
                                                 ))}
@@ -500,24 +499,24 @@ function OrderPage() {
                                         </div>
                                         <div className='flex gap-[12px]'>
                                             <div className='flex-1'>
-                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>İlçe</label>
-                                                <input {...registerAddress('district', { required: 'İlçe gerekli' })}
-                                                    placeholder='İlçe'
+                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>İlçe (District)</label>
+                                                <input {...registerAddress('district', { required: 'İlçe gerekli (District Required)' })}
+                                                    placeholder='İlçe (District)'
                                                     className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                                 {addressErrors.district && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.district.message}</p>}
                                             </div>
                                             <div className='flex-1'>
-                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Mahalle</label>
-                                                <input {...registerAddress('neighborhood', { required: 'Mahalle gerekli' })}
-                                                    placeholder='Mahalle'
+                                                <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Mahalle (Neighborhood)</label>
+                                                <input {...registerAddress('neighborhood', { required: 'Mahalle gerekli (Neighborhood Required)' })}
+                                                    placeholder='Mahalle (Neighborhood)'
                                                     className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0]' />
                                                 {addressErrors.neighborhood && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.neighborhood.message}</p>}
                                             </div>
                                         </div>
                                         <div>
-                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Adres Detayı</label>
-                                            <textarea {...registerAddress('address', { required: 'Adres detayı gerekli' })}
-                                                placeholder='Sokak, bina no, daire no...' rows={3}
+                                            <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>Adres Detayı (Address Details)</label>
+                                            <textarea {...registerAddress('address', { required: 'Adres detayı gerekli (Address Details Required)' })}
+                                                placeholder='Sokak, bina no, daire no... (Street, Building, Flat number...)' rows={3}
                                                 className='w-full px-[12px] py-[10px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0] resize-none' />
                                             {addressErrors.address && <p className='text-red-500 text-[12px] mt-[2px]'>{addressErrors.address.message}</p>}
                                         </div>
@@ -525,11 +524,11 @@ function OrderPage() {
                                             <button type='button'
                                                 onClick={() => { setShowAddressForm(false); setEditingAddress(null); }}
                                                 className='flex-1 h-[44px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] text-[#737373] font-bold hover:bg-gray-50 cursor-pointer'>
-                                                İptal
+                                                İptal (Cancel)
                                             </button>
                                             <button type='submit' disabled={addressSubmitting}
                                                 className='flex-1 h-[44px] bg-[#23A6F0] text-white font-bold text-[14px] rounded-[5px] hover:bg-[#1a8fd1] cursor-pointer disabled:opacity-50'>
-                                                {addressSubmitting ? 'Kaydediliyor...' : (editingAddress ? 'Güncelle' : 'Kaydet')}
+                                                {addressSubmitting ? 'Kaydediliyor...' : (editingAddress ? 'Güncelle (Update)' : 'Kaydet (Save)')}
                                             </button>
                                         </div>
                                     </form>
@@ -540,9 +539,9 @@ function OrderPage() {
 
                     {activeStep === 2 && (
                         <>
-                            <h2 className='font-bold text-[20px] text-[#252B42] mb-[8px]'>Ödeme Seçenekleri</h2>
+                            <h2 className='font-bold text-[20px] text-[#252B42] mb-[8px]'>Ödeme Seçenekleri (Payment Options)</h2>
                             <p className='text-[14px] text-[#737373] mb-[16px]'>
-                                Banka/Kredi Kartı veya Alışveriş Kredisi ile ödemenizi güvenle yapabilirsiniz.
+                                Banka/Kredi Kartı veya Alışveriş Kredisi ile ödemenizi güvenle yapabilirsiniz. (You Can Safely Pay With Credit/Debit Card or Shopping Credit)
                             </p>
 
                             <div className='border-[1px] border-[#ECECEC] rounded-[8px] p-[20px]'>
@@ -551,18 +550,18 @@ function OrderPage() {
                                     <div>
                                         <p className='font-bold text-[16px] text-[#252B42]'>Kart ile Öde</p>
                                         <p className='text-[13px] text-[#737373]'>
-                                            Kart ile ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi güvenle yapabilirsiniz.
+                                            Kart ile ödemeyi seçtiniz. Banka veya Kredi Kartı kullanarak ödemenizi güvenle yapabilirsiniz. (You Can Safely Pay With Your Card)
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className='flex justify-between items-center mb-[16px]'>
-                                    <h3 className='font-bold text-[16px] text-[#252B42]'>Kart Bilgileri</h3>
+                                    <h3 className='font-bold text-[16px] text-[#252B42]'>Kart Bilgileri (Card Info)</h3>
                                     <button
                                         onClick={openAddCardForm}
                                         className='text-[13px] text-[#23A6F0] font-bold hover:underline cursor-pointer'
                                     >
-                                        + Başka bir Kart ile Ödeme Yap
+                                        + Başka Bir Kart İle Ödeme Yap (Pay With Another Card)
                                     </button>
                                 </div>
 
@@ -576,7 +575,7 @@ function OrderPage() {
                                         <div className='flex-1 flex flex-col gap-[12px]'>
                                             {cards.length === 0 && !showCardForm && (
                                                 <p className='text-[14px] text-[#737373]'>
-                                                    Kayıtlı kartınız bulunmamaktadır.
+                                                    Kayıtlı kartınız bulunmamaktadır (No Saved Card).
                                                 </p>
                                             )}
                                             {cards.map((card) => (
@@ -633,7 +632,7 @@ function OrderPage() {
                                                         rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0] tracking-widest'
                                                     />
                                                     <p className='text-[12px] text-[#737373] mt-[4px]'>
-                                                        Kartınızın arkasındaki 3-4 haneli güvenlik kodu
+                                                        Kartınızın arkasındaki 3-4 haneli güvenlik kodu (Security Code)
                                                     </p>
                                                 </div>
                                             )}
@@ -648,7 +647,7 @@ function OrderPage() {
 
                                                     <div>
                                                         <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>
-                                                            Kart Numarası
+                                                            Kart Numarası (Card Number)
                                                         </label>
                                                         <input
                                                             {...registerCard('card_no', {
@@ -664,7 +663,7 @@ function OrderPage() {
 
                                                     <div>
                                                         <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>
-                                                            Kart Üzerindeki İsim
+                                                            Kart Üzerindeki İsim (Card Holder's Name)
                                                         </label>
                                                         <input
                                                             {...registerCard('name_on_card', { required: 'Kart ismi gerekli' })}
@@ -677,13 +676,13 @@ function OrderPage() {
                                                     <div className='flex gap-[12px]'>
                                                         <div className='flex-1'>
                                                             <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>
-                                                                Son Kullanma Ay
+                                                                Son Kullanma Ay /(Expiry Month)
                                                             </label>
                                                             <select
                                                                 {...registerCard('expire_month', { required: 'Ay seçiniz' })}
                                                                 className='w-full h-[44px] px-[12px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] outline-none focus:border-[#23A6F0] bg-white cursor-pointer'
                                                             >
-                                                                <option value=''>Ay</option>
+                                                                <option value=''>Ay (Month)</option>
                                                                 {MONTHS.map((m) => (
                                                                     <option key={m} value={m}>{String(m).padStart(2, '0')}</option>
                                                                 ))}
@@ -692,7 +691,7 @@ function OrderPage() {
                                                         </div>
                                                         <div className='flex-1'>
                                                             <label className='text-[13px] font-bold text-[#252B42] mb-[4px] block'>
-                                                                Son Kullanma Yıl
+                                                                Son Kullanma Yıl (Expiry Date)
                                                             </label>
                                                             <select
                                                                 {...registerCard('expire_year', { required: 'Yıl seçiniz' })}
@@ -711,11 +710,11 @@ function OrderPage() {
                                                         <button type='button'
                                                             onClick={() => { setShowCardForm(false); setEditingCard(null); }}
                                                             className='flex-1 h-[44px] border-[1px] border-[#BDBDBD] rounded-[5px] text-[14px] text-[#737373] font-bold hover:bg-gray-50 cursor-pointer'>
-                                                            İptal
+                                                            İptal (Cancel)
                                                         </button>
                                                         <button type='submit' disabled={cardSubmitting}
                                                             className='flex-1 h-[44px] bg-[#23A6F0] text-white font-bold text-[14px] rounded-[5px] hover:bg-[#1a8fd1] cursor-pointer disabled:opacity-50'>
-                                                            {cardSubmitting ? 'Kaydediliyor...' : (editingCard ? 'Güncelle' : 'Kaydet')}
+                                                            {cardSubmitting ? 'Kaydediliyor... (Saving)' : (editingCard ? 'Güncelle (Update)' : 'Kaydet (Save)')}
                                                         </button>
                                                     </div>
                                                 </form>
@@ -731,14 +730,14 @@ function OrderPage() {
                 <div className='w-full [@media(min-width:1024px)]:w-[280px] flex-shrink-0'>
                     {activeStep === 1 && (
                         <OrderSummary
-                            buttonLabel='Kaydet ve Devam Et'
+                            buttonLabel='Kaydet ve Devam Et (Save and Continue)'
                             buttonDisabled={!selectedAddressId}
                             onButtonClick={() => setActiveStep(2)}
                         />
                     )}
                     {activeStep === 2 && (
                         <OrderSummary
-                            buttonLabel='Ödeme Yap'
+                            buttonLabel='Ödeme Yap (Pay)'
                             buttonDisabled={!selectedCardId}
                             onButtonClick={handlePlaceOrder}
                         />

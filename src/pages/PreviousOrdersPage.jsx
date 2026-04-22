@@ -75,10 +75,10 @@ function PreviousOrdersPage() {
     return (
         <main className='w-full px-[24px] py-[32px] max-w-[1024px]'>
             <div className='flex items-center justify-between mb-[32px]'>
-                <h1 className='font-bold text-[28px] text-[#252B42]'>Geçmiş Siparişlerim</h1>
+                <h1 className='font-bold text-[28px] text-[#252B42]'>Geçmiş Siparişlerim (Previous Orders)</h1>
                 <Link to='/shop'
                     className='text-[14px] text-[#23A6F0] font-bold hover:underline'>
-                    Alışverişe Devam Et
+                    Alışverişe Devam Et (Keep Shopping)
                 </Link>
             </div>
 
@@ -93,7 +93,7 @@ function PreviousOrdersPage() {
                     <p className='text-red-500 font-bold text-[16px]'>{error}</p>
                     <button onClick={fetchOrders}
                         className='px-[24px] py-[10px] bg-[#23A6F0] text-white font-bold text-[14px] rounded-[5px] cursor-pointer'>
-                        Tekrar Dene
+                        Tekrar Dene (Try Again)
                     </button>
                 </div>
             )}
@@ -101,11 +101,11 @@ function PreviousOrdersPage() {
             {!loading && !error && orders.length === 0 && (
                 <div className='flex flex-col items-center py-[80px] gap-[24px]'>
                     <ShoppingBag size={64} className='text-[#BDBDBD]' />
-                    <h2 className='font-bold text-[20px] text-[#252B42]'>Henüz siparişiniz yok</h2>
-                    <p className='text-[14px] text-[#737373]'>İlk siparişinizi vermek için alışverişe başlayın.</p>
+                    <h2 className='font-bold text-[20px] text-[#252B42]'>Henüz siparişiniz yok (No Order Yet)</h2>
+                    <p className='text-[14px] text-[#737373]'>İlk siparişinizi vermek için alışverişe başlayın. (Place Your First Order)</p>
                     <Link to='/shop'
                         className='px-[24px] py-[12px] bg-[#23A6F0] text-white font-bold text-[14px] rounded-[5px] hover:bg-[#1a8fd1] transition-colors'>
-                        Alışverişe Başla
+                        Alışverişe Başla (Start Shopping)
                     </Link>
                 </div>
             )}
@@ -132,7 +132,7 @@ function PreviousOrdersPage() {
                                         </div>
                                         <div className='flex flex-col gap-[2px]'>
                                             <span className='font-bold text-[15px] text-[#252B42]'>
-                                                Sipariş #{order.id}
+                                                Sipariş (Order) #{order.id}
                                             </span>
                                             <span className='text-[13px] text-[#737373]'>
                                                 {formatDate(order.order_date)}
@@ -142,19 +142,19 @@ function PreviousOrdersPage() {
 
                                     <div className='flex items-center gap-[24px] ml-[60px] [@media(min-width:768px)]:ml-0'>
                                         <div className='flex flex-col gap-[2px]'>
-                                            <span className='text-[12px] text-[#737373]'>Ürün Sayısı</span>
+                                            <span className='text-[12px] text-[#737373]'>Ürün Sayısı (Count)</span>
                                             <span className='font-bold text-[14px] text-[#252B42]'>
-                                                {order.products.reduce((sum, p) => sum + p.count, 0)} adet
+                                                {order.products.reduce((sum, p) => sum + p.count, 0)} adet (piece(s))
                                             </span>
                                         </div>
                                         <div className='flex flex-col gap-[2px]'>
-                                            <span className='text-[12px] text-[#737373]'>Toplam</span>
+                                            <span className='text-[12px] text-[#737373]'>Toplam (Total)</span>
                                             <span className='font-bold text-[16px] text-[#23A6F0]'>
                                                 ${order.price.toFixed(2)}
                                             </span>
                                         </div>
                                         <div className='flex flex-col gap-[2px]'>
-                                            <span className='text-[12px] text-[#737373]'>Kart</span>
+                                            <span className='text-[12px] text-[#737373]'>Kart (Card)</span>
                                             <span className='font-bold text-[13px] text-[#252B42]'>
                                                 {maskCard(order.card_no)}
                                             </span>
@@ -174,36 +174,36 @@ function PreviousOrdersPage() {
 
                                         <div className='grid grid-cols-2 [@media(min-width:768px)]:grid-cols-4 gap-[16px] p-[20px] bg-[#FAFAFA]'>
                                             <div>
-                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Sipariş No</p>
+                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Sipariş No (Order number)</p>
                                                 <p className='font-bold text-[13px] text-[#252B42]'>#{order.id}</p>
                                             </div>
                                             <div>
-                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Sipariş Tarihi</p>
+                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Sipariş Tarihi (Date)</p>
                                                 <p className='font-bold text-[13px] text-[#252B42]'>{formatDate(order.order_date)}</p>
                                             </div>
                                             <div>
-                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Kart Sahibi</p>
+                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Kart Sahibi (Card Holder)</p>
                                                 <p className='font-bold text-[13px] text-[#252B42]'>{order.card_name}</p>
                                             </div>
                                             <div>
-                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Kart No</p>
+                                                <p className='text-[12px] text-[#737373] mb-[2px]'>Kart No (Card Number)</p>
                                                 <p className='font-bold text-[13px] text-[#252B42]'>{maskCard(order.card_no)}</p>
                                             </div>
                                         </div>
 
                                         <div className='p-[20px]'>
                                             <h4 className='font-bold text-[14px] text-[#252B42] mb-[12px]'>
-                                                Sipariş Ürünleri
+                                                Ürünler (Products)
                                             </h4>
 
                                             <div className='hidden [@media(min-width:768px)]:grid grid-cols-[80px_1fr_100px_100px_120px]
                                             gap-[12px] px-[12px] py-[8px] bg-[#F0F8FF] rounded-t-[4px]
                                             text-[12px] font-bold text-[#737373] uppercase'>
-                                                <span>Görsel</span>
-                                                <span>Ürün</span>
-                                                <span className='text-center'>Adet</span>
-                                                <span className='text-right'>Birim Fiyat</span>
-                                                <span className='text-right'>Toplam</span>
+                                                <span>Görsel (Image)</span>
+                                                <span>Ürün (Product)</span>
+                                                <span className='text-center'>Adet (Piece(s))</span>
+                                                <span className='text-right'>Birim Fiyat (Unit Price)</span>
+                                                <span className='text-right'>Toplam (Total)</span>
                                             </div>
 
                                             <div className='flex flex-col divide-y divide-[#ECECEC] border-[1px] border-[#ECECEC] rounded-b-[4px]'>
@@ -228,19 +228,19 @@ function PreviousOrdersPage() {
                                                         </div>
 
                                                         <div className='flex [@media(min-width:768px)]:justify-center items-center gap-[4px]'>
-                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Adet:</span>
+                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Adet (Unit):</span>
                                                             <span className='font-bold text-[14px] text-[#252B42]'>{product.count}</span>
                                                         </div>
 
                                                         <div className='flex [@media(min-width:768px)]:justify-end items-center gap-[4px]'>
-                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Birim Fiyat:</span>
+                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Birim Fiyat (Unit Price):</span>
                                                             <span className='font-bold text-[14px] text-[#252B42]'>
                                                                 ${product.price.toFixed(2)}
                                                             </span>
                                                         </div>
 
                                                         <div className='flex [@media(min-width:768px)]:justify-end items-center gap-[4px]'>
-                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Toplam:</span>
+                                                            <span className='text-[12px] text-[#737373] [@media(min-width:768px)]:hidden'>Toplam (Total):</span>
                                                             <span className='font-bold text-[15px] text-[#23A6F0]'>
                                                                 ${(product.price * product.count).toFixed(2)}
                                                             </span>
@@ -251,7 +251,7 @@ function PreviousOrdersPage() {
 
                                             <div className='flex justify-end mt-[16px] pt-[16px] border-t-[1px] border-[#ECECEC]'>
                                                 <div className='flex flex-col items-end gap-[4px]'>
-                                                    <span className='text-[13px] text-[#737373]'>Sipariş Toplamı</span>
+                                                    <span className='text-[13px] text-[#737373]'>Sipariş Toplamı (Grand Total)</span>
                                                     <span className='font-bold text-[20px] text-[#23A6F0]'>
                                                         ${order.price.toFixed(2)}
                                                     </span>

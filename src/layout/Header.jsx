@@ -115,12 +115,12 @@ function Header() {
                                             onClick={() => setIsUserMenuOpen(false)}
                                             className='block px-[16px] py-[10px] text-[14px] text-[#252B42] hover:bg-[#F0F8FF] hover:text-[#23A6F0]'
                                             style={{ textDecoration: 'none' }}>
-                                            Geçmiş Siparişlerim
+                                            Geçmiş Siparişlerim (Previous Orders)
                                         </Link>
                                         <div className='border-t-[1px] border-[#ECECEC] my-[4px]' />
                                         <button onClick={() => { handleLogout(); setIsUserMenuOpen(false); }}
                                             className='w-full text-left px-[16px] py-[10px] text-[14px] text-red-500 hover:bg-red-50 bg-transparent border-none cursor-pointer'>
-                                            Çıkış Yap
+                                            Çıkış Yap (Logout)
                                         </button>
                                     </div>
                                 )}
@@ -153,11 +153,11 @@ function Header() {
                         {isCartOpen && (
                             <div className='absolute top-full right-0 mt-[8px] bg-white shadow-xl rounded-[8px] w-[320px] p-[16px] z-50'>
                                 <h6 className='font-bold text-[14px] text-[#252B42] mb-[12px]'>
-                                    Sepetim ({cartItemCount} Ürün)
+                                    Sepetim (My Cart) ({cartItemCount} Ürün (Product))
                                 </h6>
                                 {cart.length === 0 ? (
                                     <p className='text-[14px] text-[#737373] text-center py-[16px]'>
-                                        Sepetiniz boş
+                                        Sepetiniz boş ()Empty
                                     </p>
                                 ) : (
                                     <>
@@ -192,13 +192,13 @@ function Header() {
                                                 onClick={() => setIsCartOpen(false)}
                                                 className='flex-1 h-[44px] border-[1px] border-[#252B42] rounded-[5px] font-bold text-[14px] text-[#252B42] flex items-center justify-center hover:bg-gray-50'
                                                 style={{ textDecoration: 'none' }}>
-                                                Sepete Git
+                                                Sepete Git (Go to Card)
                                             </Link>
                                             <Link to='/order'
                                                 onClick={() => setIsCartOpen(false)}
                                                 className='flex-1 h-[44px] bg-[#23A6F0] rounded-[5px] font-bold text-[14px] text-white flex items-center justify-center hover:bg-[#1a8fd1]'
                                                 style={{ textDecoration: 'none' }}>
-                                                Siparişi Tamamla
+                                                Siparişi Tamamla (Proceed)
                                             </Link>
                                         </div>
                                     </>
